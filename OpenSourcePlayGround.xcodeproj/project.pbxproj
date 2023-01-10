@@ -1,0 +1,836 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D9ADB7E2966E78A000D526B /* OSPGMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9ADB7C2966E78A000D526B /* OSPGMainVC.m */; };
+		3D9ADB812966E7D4000D526B /* OSPGBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9ADB802966E7D4000D526B /* OSPGBaseVC.m */; };
+		3D9ADB9329682FB0000D526B /* OSPGDiscoverRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D9ADB9229682FB0000D526B /* OSPGDiscoverRequest.m */; };
+		3DAE8340295988AC00466D3F /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE833F295988AC00466D3F /* UIView+Extension.m */; };
+		3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E7F294AC38500439323 /* YPNavigationController+Configure.m */; };
+		3DC44E83294AC80500439323 /* SceneDelegate+CYLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E82294AC80500439323 /* SceneDelegate+CYLTabBar.m */; };
+		3DC44E86294ACC8A00439323 /* OSPGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E85294ACC8A00439323 /* OSPGAccountViewController.m */; };
+		3DC44E89294ACD2700439323 /* OSPGMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E88294ACD2700439323 /* OSPGMessageViewController.m */; };
+		3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E8B294ACD3C00439323 /* OSPGLearnViewController.m */; };
+		3DC44E9B294AFB1600439323 /* CYLPlusButtonSubclass.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44E9A294AFB1600439323 /* CYLPlusButtonSubclass.m */; };
+		3DC44EA3294B177B00439323 /* OSPGTCMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC44EA2294B177B00439323 /* OSPGTCMViewController.m */; };
+		3DD5291E296BB75B00414684 /* OSPGDiscoverResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5291D296BB75B00414684 /* OSPGDiscoverResponse.m */; };
+		3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */; };
+		3DD52927296BBEA200414684 /* OSPGDiscoverResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52926296BBEA200414684 /* OSPGDiscoverResult.m */; };
+		3DD5292A296BEF6500414684 /* OSPGBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52929296BEF6500414684 /* OSPGBaseRequest.m */; };
+		3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5292F296BFE8800414684 /* OSPGBaseModel.m */; };
+		3DD52933296C086D00414684 /* OSPGDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52932296C086D00414684 /* OSPGDiscoverCell.m */; };
+		3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5293B296D084600414684 /* OSPGCommonHelper.m */; };
+		3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600A29482834006B20E7 /* AppDelegate.m */; };
+		3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600D29482834006B20E7 /* SceneDelegate.m */; };
+		3DF2601429482834006B20E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601229482834006B20E7 /* Main.storyboard */; };
+		3DF2601629482835006B20E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601529482835006B20E7 /* Assets.xcassets */; };
+		3DF2601929482835006B20E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601729482835006B20E7 /* LaunchScreen.storyboard */; };
+		3DF2601C29482835006B20E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2601B29482835006B20E7 /* main.m */; };
+		588F5023BB9AAE0E48FD8DA4 /* libPods-OpenSourcePlayGround.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6F440F802D9EB4A208534C /* libPods-OpenSourcePlayGround.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		27282C6B373D35C1CBCA09C4 /* Pods-OpenSourcePlayGround.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSourcePlayGround.release.xcconfig"; path = "Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround.release.xcconfig"; sourceTree = "<group>"; };
+		3D9ADB7C2966E78A000D526B /* OSPGMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSPGMainVC.m; sourceTree = "<group>"; };
+		3D9ADB7D2966E78A000D526B /* OSPGMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSPGMainVC.h; sourceTree = "<group>"; };
+		3D9ADB7F2966E7D4000D526B /* OSPGBaseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSPGBaseVC.h; sourceTree = "<group>"; };
+		3D9ADB802966E7D4000D526B /* OSPGBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSPGBaseVC.m; sourceTree = "<group>"; };
+		3D9ADB9129682FB0000D526B /* OSPGDiscoverRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverRequest.h; sourceTree = "<group>"; };
+		3D9ADB9229682FB0000D526B /* OSPGDiscoverRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverRequest.m; sourceTree = "<group>"; };
+		3DAE833E295988AC00466D3F /* UIView+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		3DAE833F295988AC00466D3F /* UIView+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		3DC44E7E294AC38500439323 /* YPNavigationController+Configure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YPNavigationController+Configure.h"; sourceTree = "<group>"; };
+		3DC44E7F294AC38500439323 /* YPNavigationController+Configure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YPNavigationController+Configure.m"; sourceTree = "<group>"; };
+		3DC44E81294AC80500439323 /* SceneDelegate+CYLTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SceneDelegate+CYLTabBar.h"; sourceTree = "<group>"; };
+		3DC44E82294AC80500439323 /* SceneDelegate+CYLTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SceneDelegate+CYLTabBar.m"; sourceTree = "<group>"; };
+		3DC44E84294ACC8A00439323 /* OSPGAccountViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGAccountViewController.h; sourceTree = "<group>"; };
+		3DC44E85294ACC8A00439323 /* OSPGAccountViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGAccountViewController.m; sourceTree = "<group>"; };
+		3DC44E87294ACD2700439323 /* OSPGMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMessageViewController.h; sourceTree = "<group>"; };
+		3DC44E88294ACD2700439323 /* OSPGMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMessageViewController.m; sourceTree = "<group>"; };
+		3DC44E8A294ACD3C00439323 /* OSPGLearnViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGLearnViewController.h; sourceTree = "<group>"; };
+		3DC44E8B294ACD3C00439323 /* OSPGLearnViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGLearnViewController.m; sourceTree = "<group>"; };
+		3DC44E99294AFB1600439323 /* CYLPlusButtonSubclass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CYLPlusButtonSubclass.h; sourceTree = "<group>"; };
+		3DC44E9A294AFB1600439323 /* CYLPlusButtonSubclass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CYLPlusButtonSubclass.m; sourceTree = "<group>"; };
+		3DC44EA0294B0D0700439323 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		3DC44EA1294B177B00439323 /* OSPGTCMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGTCMViewController.h; sourceTree = "<group>"; };
+		3DC44EA2294B177B00439323 /* OSPGTCMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGTCMViewController.m; sourceTree = "<group>"; };
+		3DD476242949BAC3002B00F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/genzhang/Documents/Learn/OpenSourcePlayGround/OpenSourcePlayGround/Info.plist; sourceTree = "<absolute>"; };
+		3DD5291C296BB75B00414684 /* OSPGDiscoverResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverResponse.h; sourceTree = "<group>"; };
+		3DD5291D296BB75B00414684 /* OSPGDiscoverResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverResponse.m; sourceTree = "<group>"; };
+		3DD52922296BB7C100414684 /* OSPGDiscoverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverManager.h; sourceTree = "<group>"; };
+		3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverManager.m; sourceTree = "<group>"; };
+		3DD52925296BBEA200414684 /* OSPGDiscoverResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverResult.h; sourceTree = "<group>"; };
+		3DD52926296BBEA200414684 /* OSPGDiscoverResult.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverResult.m; sourceTree = "<group>"; };
+		3DD52928296BEF6500414684 /* OSPGBaseRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGBaseRequest.h; sourceTree = "<group>"; };
+		3DD52929296BEF6500414684 /* OSPGBaseRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGBaseRequest.m; sourceTree = "<group>"; };
+		3DD5292E296BFE8800414684 /* OSPGBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGBaseModel.h; sourceTree = "<group>"; };
+		3DD5292F296BFE8800414684 /* OSPGBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGBaseModel.m; sourceTree = "<group>"; };
+		3DD52931296C086D00414684 /* OSPGDiscoverCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverCell.h; sourceTree = "<group>"; };
+		3DD52932296C086D00414684 /* OSPGDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverCell.m; sourceTree = "<group>"; };
+		3DD5293A296D084600414684 /* OSPGCommonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCommonHelper.h; sourceTree = "<group>"; };
+		3DD5293B296D084600414684 /* OSPGCommonHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCommonHelper.m; sourceTree = "<group>"; };
+		3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSourcePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DF2600929482834006B20E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3DF2600A29482834006B20E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3DF2600C29482834006B20E7 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		3DF2600D29482834006B20E7 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		3DF2601329482834006B20E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DF2601529482835006B20E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DF2601829482835006B20E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3DF2601B29482835006B20E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6A6F440F802D9EB4A208534C /* libPods-OpenSourcePlayGround.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OpenSourcePlayGround.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		993AF9F6D80109D2FDC0748F /* Pods-OpenSourcePlayGround.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenSourcePlayGround.debug.xcconfig"; path = "Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DF2600329482834006B20E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				588F5023BB9AAE0E48FD8DA4 /* libPods-OpenSourcePlayGround.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D9ADB8D29681F3B000D526B /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				3D9ADB9129682FB0000D526B /* OSPGDiscoverRequest.h */,
+				3D9ADB9229682FB0000D526B /* OSPGDiscoverRequest.m */,
+				3DD5291C296BB75B00414684 /* OSPGDiscoverResponse.h */,
+				3DD5291D296BB75B00414684 /* OSPGDiscoverResponse.m */,
+				3DD52922296BB7C100414684 /* OSPGDiscoverManager.h */,
+				3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */,
+				3DD52925296BBEA200414684 /* OSPGDiscoverResult.h */,
+				3DD52926296BBEA200414684 /* OSPGDiscoverResult.m */,
+			);
+			path = NetWork;
+			sourceTree = "<group>";
+		};
+		3DC44E632949BC4800439323 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E7D294AC1C100439323 /* ViewController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		3DC44E642949BC4E00439323 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3D9ADB8D29681F3B000D526B /* NetWork */,
+				3DC44E672949BC7D00439323 /* Model */,
+				3DC44E662949BC7500439323 /* View */,
+				3DC44E652949BC6200439323 /* ViewController */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3DC44E652949BC6200439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D9ADB7D2966E78A000D526B /* OSPGMainVC.h */,
+				3D9ADB7C2966E78A000D526B /* OSPGMainVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E662949BC7500439323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DD52931296C086D00414684 /* OSPGDiscoverCell.h */,
+				3DD52932296C086D00414684 /* OSPGDiscoverCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC44E672949BC7D00439323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC44E7D294AC1C100439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3D9ADB7F2966E7D4000D526B /* OSPGBaseVC.h */,
+				3D9ADB802966E7D4000D526B /* OSPGBaseVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E8D294AF9A400439323 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E90294AF9BA00439323 /* Model */,
+				3DC44E8F294AF9B600439323 /* View */,
+				3DC44E8E294AF9AE00439323 /* ViewController */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		3DC44E8E294AF9AE00439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E87294ACD2700439323 /* OSPGMessageViewController.h */,
+				3DC44E88294ACD2700439323 /* OSPGMessageViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E8F294AF9B600439323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC44E90294AF9BA00439323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC44E91294AF9C000439323 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E94294AFA3000439323 /* Model */,
+				3DC44E93294AFA2C00439323 /* View */,
+				3DC44E92294AFA2400439323 /* ViewController */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		3DC44E92294AFA2400439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E84294ACC8A00439323 /* OSPGAccountViewController.h */,
+				3DC44E85294ACC8A00439323 /* OSPGAccountViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E93294AFA2C00439323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC44E94294AFA3000439323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC44E95294AFA3500439323 /* Learn */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E98294AFA4C00439323 /* Model */,
+				3DC44E97294AFA4500439323 /* View */,
+				3DC44E96294AFA3D00439323 /* ViewController */,
+			);
+			path = Learn;
+			sourceTree = "<group>";
+		};
+		3DC44E96294AFA3D00439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E8A294ACD3C00439323 /* OSPGLearnViewController.h */,
+				3DC44E8B294ACD3C00439323 /* OSPGLearnViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E97294AFA4500439323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC44E98294AFA4C00439323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DC44E9C294B0B0E00439323 /* TCM */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E9F294B0B3500439323 /* Model */,
+				3DC44E9E294B0B3100439323 /* View */,
+				3DC44E9D294B0B2900439323 /* ViewController */,
+			);
+			path = TCM;
+			sourceTree = "<group>";
+		};
+		3DC44E9D294B0B2900439323 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44EA1294B177B00439323 /* OSPGTCMViewController.h */,
+				3DC44EA2294B177B00439323 /* OSPGTCMViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DC44E9E294B0B3100439323 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DC44E9F294B0B3500439323 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DD4761F2949B8B4002B00F5 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		3DD476202949B93F002B00F5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44EA0294B0D0700439323 /* Macros.h */,
+				3DC44E7E294AC38500439323 /* YPNavigationController+Configure.h */,
+				3DC44E7F294AC38500439323 /* YPNavigationController+Configure.m */,
+				3DC44E99294AFB1600439323 /* CYLPlusButtonSubclass.h */,
+				3DC44E9A294AFB1600439323 /* CYLPlusButtonSubclass.m */,
+				3DAE833E295988AC00466D3F /* UIView+Extension.h */,
+				3DAE833F295988AC00466D3F /* UIView+Extension.m */,
+				3DD52928296BEF6500414684 /* OSPGBaseRequest.h */,
+				3DD52929296BEF6500414684 /* OSPGBaseRequest.m */,
+				3DD5292E296BFE8800414684 /* OSPGBaseModel.h */,
+				3DD5292F296BFE8800414684 /* OSPGBaseModel.m */,
+				3DD5293A296D084600414684 /* OSPGCommonHelper.h */,
+				3DD5293B296D084600414684 /* OSPGCommonHelper.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3DD476212949B952002B00F5 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				3DC44E91294AF9C000439323 /* Account */,
+				3DC44E632949BC4800439323 /* Base */,
+				3DC44E95294AFA3500439323 /* Learn */,
+				3DC44E642949BC4E00439323 /* Main */,
+				3DC44E8D294AF9A400439323 /* Message */,
+				3DC44E9C294B0B0E00439323 /* TCM */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		3DD476222949B971002B00F5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				3DF2601529482835006B20E7 /* Assets.xcassets */,
+				3DF2601229482834006B20E7 /* Main.storyboard */,
+				3DF2601729482835006B20E7 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		3DD476232949B9FB002B00F5 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				3DF2600929482834006B20E7 /* AppDelegate.h */,
+				3DF2600A29482834006B20E7 /* AppDelegate.m */,
+				3DF2600C29482834006B20E7 /* SceneDelegate.h */,
+				3DF2600D29482834006B20E7 /* SceneDelegate.m */,
+				3DC44E81294AC80500439323 /* SceneDelegate+CYLTabBar.h */,
+				3DC44E82294AC80500439323 /* SceneDelegate+CYLTabBar.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3DF25FFD29482834006B20E7 = {
+			isa = PBXGroup;
+			children = (
+				3DF2600829482834006B20E7 /* OpenSourcePlayGround */,
+				8B8B73644D7B4D575686D1C8 /* Frameworks */,
+				3E850BA0C7ED04E817FCCFAE /* Pods */,
+				3DF2600729482834006B20E7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DF2600729482834006B20E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DF2600829482834006B20E7 /* OpenSourcePlayGround */ = {
+			isa = PBXGroup;
+			children = (
+				3DD476232949B9FB002B00F5 /* AppDelegate */,
+				3DD476202949B93F002B00F5 /* Common */,
+				3DD476222949B971002B00F5 /* Resource */,
+				3DD476212949B952002B00F5 /* Sections */,
+				3DD4761F2949B8B4002B00F5 /* Util */,
+				3DD476242949BAC3002B00F5 /* Info.plist */,
+				3DF2601B29482835006B20E7 /* main.m */,
+			);
+			path = OpenSourcePlayGround;
+			sourceTree = "<group>";
+		};
+		3E850BA0C7ED04E817FCCFAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				993AF9F6D80109D2FDC0748F /* Pods-OpenSourcePlayGround.debug.xcconfig */,
+				27282C6B373D35C1CBCA09C4 /* Pods-OpenSourcePlayGround.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8B8B73644D7B4D575686D1C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6A6F440F802D9EB4A208534C /* libPods-OpenSourcePlayGround.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DF2600529482834006B20E7 /* OpenSourcePlayGround */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DF2601F29482835006B20E7 /* Build configuration list for PBXNativeTarget "OpenSourcePlayGround" */;
+			buildPhases = (
+				4115D182ED83348C4F18E732 /* [CP] Check Pods Manifest.lock */,
+				3DF2600229482834006B20E7 /* Sources */,
+				3DF2600329482834006B20E7 /* Frameworks */,
+				3DF2600429482834006B20E7 /* Resources */,
+				998015C35AF5EA51C7D6CC2F /* [CP] Embed Pods Frameworks */,
+				68895EB161D0D17EA5877B98 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenSourcePlayGround;
+			productName = OpenSourcePlayGround;
+			productReference = 3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DF25FFE29482834006B20E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					3DF2600529482834006B20E7 = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = 3DF2600129482834006B20E7 /* Build configuration list for PBXProject "OpenSourcePlayGround" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DF25FFD29482834006B20E7;
+			productRefGroup = 3DF2600729482834006B20E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DF2600529482834006B20E7 /* OpenSourcePlayGround */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DF2600429482834006B20E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DF2601929482835006B20E7 /* LaunchScreen.storyboard in Resources */,
+				3DF2601629482835006B20E7 /* Assets.xcassets in Resources */,
+				3DF2601429482834006B20E7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4115D182ED83348C4F18E732 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenSourcePlayGround-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68895EB161D0D17EA5877B98 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		998015C35AF5EA51C7D6CC2F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OpenSourcePlayGround/Pods-OpenSourcePlayGround-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DF2600229482834006B20E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DC44E89294ACD2700439323 /* OSPGMessageViewController.m in Sources */,
+				3DC44E86294ACC8A00439323 /* OSPGAccountViewController.m in Sources */,
+				3DD52933296C086D00414684 /* OSPGDiscoverCell.m in Sources */,
+				3D9ADB7E2966E78A000D526B /* OSPGMainVC.m in Sources */,
+				3DAE8340295988AC00466D3F /* UIView+Extension.m in Sources */,
+				3DD52927296BBEA200414684 /* OSPGDiscoverResult.m in Sources */,
+				3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */,
+				3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */,
+				3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */,
+				3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */,
+				3DD5291E296BB75B00414684 /* OSPGDiscoverResponse.m in Sources */,
+				3DC44E83294AC80500439323 /* SceneDelegate+CYLTabBar.m in Sources */,
+				3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */,
+				3DC44E9B294AFB1600439323 /* CYLPlusButtonSubclass.m in Sources */,
+				3D9ADB812966E7D4000D526B /* OSPGBaseVC.m in Sources */,
+				3DD5292A296BEF6500414684 /* OSPGBaseRequest.m in Sources */,
+				3DF2601C29482835006B20E7 /* main.m in Sources */,
+				3D9ADB9329682FB0000D526B /* OSPGDiscoverRequest.m in Sources */,
+				3DC44EA3294B177B00439323 /* OSPGTCMViewController.m in Sources */,
+				3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */,
+				3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DF2601229482834006B20E7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF2601329482834006B20E7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3DF2601729482835006B20E7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DF2601829482835006B20E7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DF2601D29482835006B20E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3DF2601E29482835006B20E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DF2602029482835006B20E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 993AF9F6D80109D2FDC0748F /* Pods-OpenSourcePlayGround.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8H2R68RPW;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MLeaksFinder/MLeaksFinder.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKVCore/MMKVCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MyLayout/MyLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCache/YYCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYImage/YYImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYKit/YYKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYWebImage/YYWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+				);
+				INFOPLIST_FILE = OpenSourcePlayGround/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genzhang.OpenSourcePlayGround;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		3DF2602129482835006B20E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27282C6B373D35C1CBCA09C4 /* Pods-OpenSourcePlayGround.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Q8H2R68RPW;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking/AFNetworking.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaLumberjack/CocoaLumberjack.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FLAnimatedImage/FLAnimatedImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManager/IQKeyboardManager.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JXCategoryView/JXCategoryView.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD/MBProgressHUD.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MJRefresh/MJRefresh.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MLeaksFinder/MLeaksFinder.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKV/MMKV.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MMKVCore/MMKVCore.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MyLayout/MyLayout.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYCache/YYCache.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYImage/YYImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYKit/YYKit.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYModel/YYModel.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/YYWebImage/YYWebImage.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/pop/pop.framework/Headers\"",
+				);
+				INFOPLIST_FILE = OpenSourcePlayGround/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.genzhang.OpenSourcePlayGround;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DF2600129482834006B20E7 /* Build configuration list for PBXProject "OpenSourcePlayGround" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF2601D29482835006B20E7 /* Debug */,
+				3DF2601E29482835006B20E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DF2601F29482835006B20E7 /* Build configuration list for PBXNativeTarget "OpenSourcePlayGround" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DF2602029482835006B20E7 /* Debug */,
+				3DF2602129482835006B20E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DF25FFE29482834006B20E7 /* Project object */;
+}

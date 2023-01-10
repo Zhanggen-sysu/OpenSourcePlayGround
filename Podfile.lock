@@ -1,0 +1,178 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - CocoaLumberjack (3.8.0):
+    - CocoaLumberjack/Core (= 3.8.0)
+  - CocoaLumberjack/Core (3.8.0)
+  - CYLTabBarController (1.24.2):
+    - CYLTabBarController/Core (= 1.24.2)
+  - CYLTabBarController/Core (1.24.2)
+  - DoraemonKit/Core (3.0.7):
+    - FMDB
+    - GCDWebServer
+    - GCDWebServer/WebDAV
+    - GCDWebServer/WebUploader
+  - DoraemonKit/WithDatabase (3.0.7):
+    - DoraemonKit/Core
+    - YYDebugDatabase
+  - DoraemonKit/WithGPS (3.0.7):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLoad (3.0.7):
+    - DoraemonKit/Core
+  - DoraemonKit/WithLogger (3.0.7):
+    - CocoaLumberjack
+    - DoraemonKit/Core
+  - DoraemonKit/WithMLeaksFinder (3.0.7):
+    - DoraemonKit/Core
+    - FBRetainCycleDetector
+  - DoraemonKit/WithWeex (3.0.7):
+    - DoraemonKit/Core
+    - WeexSDK
+    - WXDevtool
+  - FBRetainCycleDetector (0.1.4)
+  - FLAnimatedImage (1.0.17)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - GCDWebServer (3.5.4):
+    - GCDWebServer/Core (= 3.5.4)
+  - GCDWebServer/Core (3.5.4)
+  - GCDWebServer/WebDAV (3.5.4):
+    - GCDWebServer/Core
+  - GCDWebServer/WebUploader (3.5.4):
+    - GCDWebServer/Core
+  - IQKeyboardManager (6.5.10)
+  - JXCategoryView (1.6.1)
+  - LookinServer (1.1.2):
+    - LookinServer/Core (= 1.1.2)
+  - LookinServer/Core (1.1.2)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
+  - MMKV (1.2.14):
+    - MMKVCore (~> 1.2.14)
+  - MMKVCore (1.2.14)
+  - MyLayout (1.9.8)
+  - pop (1.0.12)
+  - SDWebImage (5.14.2):
+    - SDWebImage/Core (= 5.14.2)
+  - SDWebImage/Core (5.14.2)
+  - SocketRocket (0.6.0)
+  - "UITableView+FDTemplateLayoutCell (1.6)"
+  - WeexSDK (0.30.0)
+  - WXDevtool (0.24.0):
+    - SocketRocket
+    - WeexSDK
+  - YPNavigationBarTransition (2.2.3)
+  - YTKNetwork (3.0.6):
+    - AFNetworking/NSURLSession (~> 4.0)
+  - YYDebugDatabase (2.1.1):
+    - FMDB
+    - GCDWebServer
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - AFNetworking
+  - CocoaLumberjack
+  - CYLTabBarController
+  - DoraemonKit/Core
+  - DoraemonKit/WithDatabase
+  - DoraemonKit/WithGPS
+  - DoraemonKit/WithLoad
+  - DoraemonKit/WithLogger
+  - DoraemonKit/WithMLeaksFinder
+  - DoraemonKit/WithWeex
+  - FLAnimatedImage
+  - FMDB
+  - IQKeyboardManager
+  - JXCategoryView
+  - LookinServer
+  - Masonry
+  - MBProgressHUD
+  - MJRefresh
+  - MMKV
+  - MyLayout
+  - pop
+  - SDWebImage
+  - "UITableView+FDTemplateLayoutCell"
+  - YPNavigationBarTransition
+  - YTKNetwork
+  - YYKit
+
+SPEC REPOS:
+  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
+    - AFNetworking
+    - CocoaLumberjack
+    - CYLTabBarController
+    - DoraemonKit
+    - FBRetainCycleDetector
+    - FLAnimatedImage
+    - FMDB
+    - GCDWebServer
+    - IQKeyboardManager
+    - JXCategoryView
+    - LookinServer
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MMKV
+    - MMKVCore
+    - MyLayout
+    - pop
+    - SDWebImage
+    - SocketRocket
+    - "UITableView+FDTemplateLayoutCell"
+    - WeexSDK
+    - WXDevtool
+    - YPNavigationBarTransition
+    - YTKNetwork
+    - YYDebugDatabase
+    - YYKit
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
+  CYLTabBarController: e7440ad0992edfb8ac14a6c793f43aa636c5cba5
+  DoraemonKit: 32fb97f3aa82efa133111d193080ca5462cef135
+  FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
+  FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
+  IQKeyboardManager: 45a1fa55c1a5b02c61ac0fd7fd5b62bb4ad20d97
+  JXCategoryView: 7b1ee69ede4843c581688afe84d0f047723262f2
+  LookinServer: bb667a77f1ee594a8e91226e729dbe49f3401f5c
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MMKV: 9c4663aa7ca255d478ff10f2f5cb7d17c1651ccd
+  MMKVCore: 89f5c8a66bba2dcd551779dea4d412eeec8ff5bb
+  MyLayout: 6ca47dbf27648aa011496094cfe1162217e3c912
+  pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
+  SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
+  "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
+  WeexSDK: 8e01e33244f51cb11f9f000b5200d93de5f4fa97
+  WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
+  YPNavigationBarTransition: d3d8c0e4cced41dec43647832bb45737d79cc8b0
+  YTKNetwork: c16be90b06be003de9e9cd0d3b187cc8eaf35c04
+  YYDebugDatabase: 2e815f2b5ba7ff49aa298ea265dec6a7aa4664ad
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 50ac0ce879ec2c3119a77455c33c8b11214e6b75
+
+COCOAPODS: 1.11.3
