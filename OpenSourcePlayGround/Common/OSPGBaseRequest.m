@@ -20,7 +20,6 @@
 {
     id dict = [[self dictionaryWithValuesForKeys:[self class].properties.allValues] mutableCopy];
 
-    // Rewrite property names that differ in JSON
     for (id jsonName in [self class].properties) {
         id propertyName = [self class].properties[jsonName];
         if (!dict[propertyName] || [dict[propertyName] isEqual:[NSNull null]]) {
