@@ -35,6 +35,11 @@
     return dict;
 }
 
+- (id)requestArgument
+{
+    return [self jsonDictionary];
+}
+
 - (void)startRequestWithRspClass:(Class)rspClass
                    completeBlock:(OSPGCommonResponseBlock)block
 {

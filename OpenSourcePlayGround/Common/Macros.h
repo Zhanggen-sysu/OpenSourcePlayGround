@@ -44,6 +44,6 @@
 #define kBoldFont(size) [UIFont boldSystemFontOfSize:size]
 
 #define API_KEY @"748c16b2d0a067ab5e9055e41fc2754b"
-#define API_IMG_BASEURL @"https://image.tmdb.org/t/p"
+#define API_IMG_BASEURL @"https://image.tmdb.org/t/p/"
 
 #endif /* Macros_h */

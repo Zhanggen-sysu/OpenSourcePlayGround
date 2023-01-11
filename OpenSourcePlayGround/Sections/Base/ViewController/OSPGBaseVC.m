@@ -16,21 +16,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self yp_refreshNavigationBarStyle];
-}
-
-
-#pragma mark - YPNavigationBarConfigureStyle
-- (YPNavigationBarConfigurations)yp_navigtionBarConfiguration {
-    return YPNavigationBarShow | YPNavigationBarBackgroundStyleOpaque | YPNavigationBarBackgroundStyleColor;
-}
-
-- (UIColor *)yp_navigationBarTintColor {
-    return [UIColor whiteColor];
-}
-
-- (UIColor *)yp_navigationBackgroundColor {
-    return kMainColor;
 }
 
 @end

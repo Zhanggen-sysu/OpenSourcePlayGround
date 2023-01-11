@@ -15,7 +15,7 @@
 }
 
 - (UIColor *) yp_navigationBarTintColor {
-    return [UIColor clearColor];
+    return [UIColor whiteColor];
 }
 
 @end

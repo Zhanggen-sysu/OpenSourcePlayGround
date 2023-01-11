@@ -6,13 +6,13 @@
 //
 
 #import "OSPGMainVC.h"
-#import "Masonry.h"
 #import "JXCategoryView.h"
 #import "OSPGDiscoverManager.h"
 #import "OSPGDiscoverResponse.h"
 #import "OSPGDiscoverCell.h"
-#import "OSPGCommonHelper.h"
 #import "MJRefresh.h"
+#import "OSPGMovieDetailVC.h"
+#import "OSPGDiscoverResult.h"
 
 static NSString *kDiscoverCellID = @"kDiscoverCellID";
 // 每行cell数
@@ -34,10 +34,15 @@ static NSInteger kDiscoverRowCount = 2;
 {
     [super viewDidLoad];
     self.view.backgroundColor = RGBColor(240, 240, 240);
-    self.navigationController.navigationBar.hidden = YES;
     [self setupSubviews];
     [self defineLayout];
     [self loadDefaultData:NO];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 #pragma mark - Data
@@ -90,14 +95,14 @@ static NSInteger kDiscoverRowCount = 2;
     }];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.navigationBar.mas_bottom);
+        make.top.equalTo(self.navigationBar.mas_bottom).offset(10.f);
         make.bottom.equalTo(self.view);
         make.left.equalTo(self.view).offset(10.f);
         make.right.equalTo(self.view).offset(-10.f);
     }];
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UICollectionViewDelegate
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     OSPGDiscoverCell *cell = (OSPGDiscoverCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kDiscoverCellID forIndexPath:indexPath];
@@ -109,6 +114,16 @@ static NSInteger kDiscoverRowCount = 2;
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.data.count;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    OSPGDiscoverResult *result = self.data[indexPath.row];
+    OSPGMovieDetailVC *detailVC = [[OSPGMovieDetailVC alloc] init];
+    detailVC.movieId = result.identifier;
+    // tips: 下一页的返回按钮需要在上一页设置才有效
+    self.navigationItem.backButtonTitle = @"";
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (UIButton *)searchBtn

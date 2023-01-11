@@ -58,9 +58,4 @@
     return @"discover/movie";
 }
 
-- (id)requestArgument
-{
-    return [self jsonDictionary];
-}
-
 @end

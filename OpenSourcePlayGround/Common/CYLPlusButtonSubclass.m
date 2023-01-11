@@ -7,6 +7,7 @@
 #import "Macros.h"
 #import "CYLPlusButtonSubclass.h"
 #import "OSPGTCMViewController.h"
+#import "UIImage+YPConfigure.h"
 
 @implementation CYLPlusButtonSubclass
 
@@ -19,10 +20,6 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-//    CGSize titleSize = self.titleLabel.bounds.size;
-//    CGSize imageSize = self.imageView.bounds.size;
-//    self.titleEdgeInsets = UIEdgeInsetsMake(imageSize.height, -imageSize.width, 0, 0);
-//    self.imageEdgeInsets = UIEdgeInsetsMake(-imageSize.height, 0, 0, -titleSize.width);
 }
 
 #pragma mark - CYLPlusButtonSubclassing
@@ -31,10 +28,6 @@
     [btn setImage:kGetImage(@"TCMIcon") forState:UIControlStateNormal];
     [btn setImage:kGetImage(@"TCMHighlightIcon") forState:UIControlStateHighlighted];
     [btn setImage:kGetImage(@"TCMHighlightIcon") forState:UIControlStateSelected];
-//    [btn setTitle:@"中药" forState:UIControlStateNormal];
-//    [btn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
-//    [btn setTitleColor:kMainColor forState:UIControlStateSelected];
-    btn.titleLabel.font = [UIFont systemFontOfSize:10 weight:UIFontWeightBold];
     [btn sizeToFit];
     btn.frame = CGRectMake(0, 0, 64, 64);
     [btn setBackgroundImage:[UIImage yp_imageWithColor:RGBColor(220, 220, 220)] forState:UIControlStateNormal];

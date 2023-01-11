@@ -25,6 +25,14 @@
 		3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5292F296BFE8800414684 /* OSPGBaseModel.m */; };
 		3DD52933296C086D00414684 /* OSPGDiscoverCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52932296C086D00414684 /* OSPGDiscoverCell.m */; };
 		3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5293B296D084600414684 /* OSPGCommonHelper.m */; };
+		3DD52948296E553000414684 /* OSPGMovieDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52947296E553000414684 /* OSPGMovieDetailVC.m */; };
+		3DD5294B296E602900414684 /* OSPGMovieDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5294A296E602900414684 /* OSPGMovieDetailRequest.m */; };
+		3DD5294E296E627300414684 /* OSPGMovieDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5294D296E627300414684 /* OSPGMovieDetailResponse.m */; };
+		3DD52951296E633E00414684 /* OSPGGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52950296E633E00414684 /* OSPGGenre.m */; };
+		3DD52954296E635900414684 /* OSPGProductionCompany.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52953296E635900414684 /* OSPGProductionCompany.m */; };
+		3DD52957296E636500414684 /* OSPGProductionCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52956296E636500414684 /* OSPGProductionCountry.m */; };
+		3DD5295A296E638E00414684 /* OSPGSpokenLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52959296E638E00414684 /* OSPGSpokenLanguage.m */; };
+		3DD5295D296E685300414684 /* OSPGMovieDetailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5295C296E685300414684 /* OSPGMovieDetailManager.m */; };
 		3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600A29482834006B20E7 /* AppDelegate.m */; };
 		3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600D29482834006B20E7 /* SceneDelegate.m */; };
 		3DF2601429482834006B20E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601229482834006B20E7 /* Main.storyboard */; };
@@ -74,6 +82,22 @@
 		3DD52932296C086D00414684 /* OSPGDiscoverCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverCell.m; sourceTree = "<group>"; };
 		3DD5293A296D084600414684 /* OSPGCommonHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCommonHelper.h; sourceTree = "<group>"; };
 		3DD5293B296D084600414684 /* OSPGCommonHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCommonHelper.m; sourceTree = "<group>"; };
+		3DD52946296E553000414684 /* OSPGMovieDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailVC.h; sourceTree = "<group>"; };
+		3DD52947296E553000414684 /* OSPGMovieDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailVC.m; sourceTree = "<group>"; };
+		3DD52949296E602900414684 /* OSPGMovieDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailRequest.h; sourceTree = "<group>"; };
+		3DD5294A296E602900414684 /* OSPGMovieDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailRequest.m; sourceTree = "<group>"; };
+		3DD5294C296E627300414684 /* OSPGMovieDetailResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailResponse.h; sourceTree = "<group>"; };
+		3DD5294D296E627300414684 /* OSPGMovieDetailResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailResponse.m; sourceTree = "<group>"; };
+		3DD5294F296E633E00414684 /* OSPGGenre.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGGenre.h; sourceTree = "<group>"; };
+		3DD52950296E633E00414684 /* OSPGGenre.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGGenre.m; sourceTree = "<group>"; };
+		3DD52952296E635900414684 /* OSPGProductionCompany.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGProductionCompany.h; sourceTree = "<group>"; };
+		3DD52953296E635900414684 /* OSPGProductionCompany.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGProductionCompany.m; sourceTree = "<group>"; };
+		3DD52955296E636500414684 /* OSPGProductionCountry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGProductionCountry.h; sourceTree = "<group>"; };
+		3DD52956296E636500414684 /* OSPGProductionCountry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGProductionCountry.m; sourceTree = "<group>"; };
+		3DD52958296E638E00414684 /* OSPGSpokenLanguage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGSpokenLanguage.h; sourceTree = "<group>"; };
+		3DD52959296E638E00414684 /* OSPGSpokenLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSpokenLanguage.m; sourceTree = "<group>"; };
+		3DD5295B296E685300414684 /* OSPGMovieDetailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailManager.h; sourceTree = "<group>"; };
+		3DD5295C296E685300414684 /* OSPGMovieDetailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailManager.m; sourceTree = "<group>"; };
 		3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSourcePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF2600929482834006B20E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DF2600A29482834006B20E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,14 +126,8 @@
 		3D9ADB8D29681F3B000D526B /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
-				3D9ADB9129682FB0000D526B /* OSPGDiscoverRequest.h */,
-				3D9ADB9229682FB0000D526B /* OSPGDiscoverRequest.m */,
-				3DD5291C296BB75B00414684 /* OSPGDiscoverResponse.h */,
-				3DD5291D296BB75B00414684 /* OSPGDiscoverResponse.m */,
 				3DD52922296BB7C100414684 /* OSPGDiscoverManager.h */,
 				3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */,
-				3DD52925296BBEA200414684 /* OSPGDiscoverResult.h */,
-				3DD52926296BBEA200414684 /* OSPGDiscoverResult.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -117,6 +135,7 @@
 		3DC44E632949BC4800439323 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				3DD52945296E54F300414684 /* Model */,
 				3DC44E7D294AC1C100439323 /* ViewController */,
 			);
 			path = Base;
@@ -125,8 +144,8 @@
 		3DC44E642949BC4E00439323 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				3D9ADB8D29681F3B000D526B /* NetWork */,
 				3DC44E672949BC7D00439323 /* Model */,
+				3D9ADB8D29681F3B000D526B /* NetWork */,
 				3DC44E662949BC7500439323 /* View */,
 				3DC44E652949BC6200439323 /* ViewController */,
 			);
@@ -154,6 +173,12 @@
 		3DC44E672949BC7D00439323 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3D9ADB9129682FB0000D526B /* OSPGDiscoverRequest.h */,
+				3D9ADB9229682FB0000D526B /* OSPGDiscoverRequest.m */,
+				3DD5291C296BB75B00414684 /* OSPGDiscoverResponse.h */,
+				3DD5291D296BB75B00414684 /* OSPGDiscoverResponse.m */,
+				3DD52925296BBEA200414684 /* OSPGDiscoverResult.h */,
+				3DD52926296BBEA200414684 /* OSPGDiscoverResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,10 +341,6 @@
 				3DC44E9A294AFB1600439323 /* CYLPlusButtonSubclass.m */,
 				3DAE833E295988AC00466D3F /* UIView+Extension.h */,
 				3DAE833F295988AC00466D3F /* UIView+Extension.m */,
-				3DD52928296BEF6500414684 /* OSPGBaseRequest.h */,
-				3DD52929296BEF6500414684 /* OSPGBaseRequest.m */,
-				3DD5292E296BFE8800414684 /* OSPGBaseModel.h */,
-				3DD5292F296BFE8800414684 /* OSPGBaseModel.m */,
 				3DD5293A296D084600414684 /* OSPGCommonHelper.h */,
 				3DD5293B296D084600414684 /* OSPGCommonHelper.m */,
 			);
@@ -331,6 +352,7 @@
 			children = (
 				3DC44E91294AF9C000439323 /* Account */,
 				3DC44E632949BC4800439323 /* Base */,
+				3DD52940296E543200414684 /* Detail */,
 				3DC44E95294AFA3500439323 /* Learn */,
 				3DC44E642949BC4E00439323 /* Main */,
 				3DC44E8D294AF9A400439323 /* Message */,
@@ -360,6 +382,72 @@
 				3DC44E82294AC80500439323 /* SceneDelegate+CYLTabBar.m */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		3DD52940296E543200414684 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				3DD52944296E546A00414684 /* Model */,
+				3DD52941296E544500414684 /* Network */,
+				3DD52943296E546500414684 /* View */,
+				3DD52942296E544C00414684 /* ViewController */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		3DD52941296E544500414684 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5295B296E685300414684 /* OSPGMovieDetailManager.h */,
+				3DD5295C296E685300414684 /* OSPGMovieDetailManager.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3DD52942296E544C00414684 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3DD52946296E553000414684 /* OSPGMovieDetailVC.h */,
+				3DD52947296E553000414684 /* OSPGMovieDetailVC.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3DD52943296E546500414684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DD52944296E546A00414684 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5294F296E633E00414684 /* OSPGGenre.h */,
+				3DD52950296E633E00414684 /* OSPGGenre.m */,
+				3DD52949296E602900414684 /* OSPGMovieDetailRequest.h */,
+				3DD5294A296E602900414684 /* OSPGMovieDetailRequest.m */,
+				3DD5294C296E627300414684 /* OSPGMovieDetailResponse.h */,
+				3DD5294D296E627300414684 /* OSPGMovieDetailResponse.m */,
+				3DD52952296E635900414684 /* OSPGProductionCompany.h */,
+				3DD52953296E635900414684 /* OSPGProductionCompany.m */,
+				3DD52955296E636500414684 /* OSPGProductionCountry.h */,
+				3DD52956296E636500414684 /* OSPGProductionCountry.m */,
+				3DD52958296E638E00414684 /* OSPGSpokenLanguage.h */,
+				3DD52959296E638E00414684 /* OSPGSpokenLanguage.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3DD52945296E54F300414684 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3DD52928296BEF6500414684 /* OSPGBaseRequest.h */,
+				3DD52929296BEF6500414684 /* OSPGBaseRequest.m */,
+				3DD5292E296BFE8800414684 /* OSPGBaseModel.h */,
+				3DD5292F296BFE8800414684 /* OSPGBaseModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3DF25FFD29482834006B20E7 = {
@@ -544,14 +632,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC44E89294ACD2700439323 /* OSPGMessageViewController.m in Sources */,
+				3DD52954296E635900414684 /* OSPGProductionCompany.m in Sources */,
 				3DC44E86294ACC8A00439323 /* OSPGAccountViewController.m in Sources */,
 				3DD52933296C086D00414684 /* OSPGDiscoverCell.m in Sources */,
+				3DD5295D296E685300414684 /* OSPGMovieDetailManager.m in Sources */,
+				3DD52951296E633E00414684 /* OSPGGenre.m in Sources */,
+				3DD52948296E553000414684 /* OSPGMovieDetailVC.m in Sources */,
 				3D9ADB7E2966E78A000D526B /* OSPGMainVC.m in Sources */,
 				3DAE8340295988AC00466D3F /* UIView+Extension.m in Sources */,
 				3DD52927296BBEA200414684 /* OSPGDiscoverResult.m in Sources */,
 				3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */,
 				3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */,
 				3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */,
+				3DD5294B296E602900414684 /* OSPGMovieDetailRequest.m in Sources */,
 				3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */,
 				3DD5291E296BB75B00414684 /* OSPGDiscoverResponse.m in Sources */,
 				3DC44E83294AC80500439323 /* SceneDelegate+CYLTabBar.m in Sources */,
@@ -563,7 +656,10 @@
 				3D9ADB9329682FB0000D526B /* OSPGDiscoverRequest.m in Sources */,
 				3DC44EA3294B177B00439323 /* OSPGTCMViewController.m in Sources */,
 				3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */,
+				3DD5295A296E638E00414684 /* OSPGSpokenLanguage.m in Sources */,
 				3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */,
+				3DD5294E296E627300414684 /* OSPGMovieDetailResponse.m in Sources */,
+				3DD52957296E636500414684 /* OSPGProductionCountry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

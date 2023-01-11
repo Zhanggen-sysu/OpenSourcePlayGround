@@ -7,6 +7,7 @@
 
 #import "OSPGCommonHelper.h"
 #import "MBProgressHUD.h"
+#import "Macros.h"
 
 @interface OSPGCommonHelper ()
 
@@ -137,6 +138,65 @@ static OSPGCommonHelper *_manager = nil;
     hud.label.text = message;
     hud.removeFromSuperViewOnHide = YES;
     [hud hideAnimated:YES afterDelay:duration];
+}
+
++ (NSURL *)getPosterUrl:(NSString *)string size:(OSPGPosterSize)size
+{
+    NSString *width = @"w342";
+    switch (size) {
+        case OSPGPosterSize_w92:
+            width = @"w92";
+            break;
+        case OSPGPosterSize_w154:
+            width = @"w154";
+            break;
+        case OSPGPosterSize_w185:
+            width = @"w185";
+            break;
+        case OSPGPosterSize_w342:
+            width = @"w342";
+            break;
+        case OSPGPosterSize_w500:
+            width = @"w500";
+            break;
+        case OSPGPosterSize_w780:
+            width = @"w780";
+            break;
+        case OSPGPosterSize_original:
+            width = @"original";
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSString *posterPath = [NSString stringWithFormat:@"%@%@%@", API_IMG_BASEURL, width, string];
+    return [NSURL URLWithString:posterPath];
+}
+
++ (NSURL *)getBackdropUrl:(NSString *)string size:(OSPGBackdropSize)size
+{
+    NSString *width = @"w780";
+    switch (size) {
+        case OSPGBackdropSize_w300:
+            width = @"w300";
+            break;
+        case OSPGBackdropSize_w780:
+            width = @"w780";
+            break;
+        case OSPGBackdropSize_w1280:
+            width = @"w1280";
+            break;
+        case OSPGPosterSize_original:
+            width = @"original";
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSString *backdropPath = [NSString stringWithFormat:@"%@%@%@", API_IMG_BASEURL, width, string];
+    return [NSURL URLWithString:backdropPath];
 }
 
 @end

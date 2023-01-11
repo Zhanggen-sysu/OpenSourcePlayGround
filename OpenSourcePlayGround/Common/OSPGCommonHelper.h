@@ -15,6 +15,25 @@ typedef NS_ENUM(NSUInteger, OSPGDateFormate) {
     // ... more
 };
 
+typedef NS_ENUM(NSUInteger, OSPGPosterSize) {
+    OSPGPosterSize_Default,
+    OSPGPosterSize_w92,
+    OSPGPosterSize_w154,
+    OSPGPosterSize_w185,
+    OSPGPosterSize_w342,
+    OSPGPosterSize_w500,
+    OSPGPosterSize_w780,
+    OSPGPosterSize_original,
+};
+
+typedef NS_ENUM(NSUInteger, OSPGBackdropSize) {
+    OSPGBackdropSize_Default,
+    OSPGBackdropSize_w300,
+    OSPGBackdropSize_w780,
+    OSPGBackdropSize_w1280,
+    OSPGBackdropSize_original,
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OSPGCommonHelper : NSObject
@@ -31,6 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedManager;
 + (void)showMessage:(NSString *)message inView:(UIView *)view duration:(NSInteger)duration;
 + (UIWindow *)getKeyWindow;
++ (NSURL *)getPosterUrl:(NSString *)string size:(OSPGPosterSize)size;
++ (NSURL *)getBackdropUrl:(NSString *)string size:(OSPGBackdropSize)size;
 
 @end
 

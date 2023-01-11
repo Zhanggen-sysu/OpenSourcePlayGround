@@ -71,7 +71,7 @@
 {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = [UIFont boldSystemFontOfSize:12];
+        _nameLabel.font = kBoldFont(12.f);
         _nameLabel.numberOfLines = 1;
     }
     return _nameLabel;
@@ -81,7 +81,7 @@
 {
     if (!_subLabel) {
         _subLabel = [[UILabel alloc] init];
-        _subLabel.font = [UIFont systemFontOfSize:10];
+        _subLabel.font = kFont(10);
         _subLabel.textColor = RGBColor(128, 128, 128);
         _subLabel.numberOfLines = 1;
     }
@@ -100,8 +100,8 @@
                                                                            fromFormate:OSPGDateFormate_yyyyMMdd
                                                                              toFormate:OSPGDateFormate_MMMdyyyy];
     self.subLabel.text = [NSString stringWithFormat:@"%@ - %@", releaseDate, result.originalLanguage];
-    NSString *posterPath = [NSString stringWithFormat:@"%@/w342%@", API_IMG_BASEURL, result.posterPath];
-    [self.posterImg sd_setImageWithURL:[NSURL URLWithString:posterPath] placeholderImage:[UIImage imageNamed:@""]];
+    // TODO: genzhang 补充默认图
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@""]];
 }
 
 @end
