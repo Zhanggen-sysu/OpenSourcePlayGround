@@ -31,22 +31,22 @@
 - (NSArray *)viewControllers {
     // 首页
     OSPGMainVC *homeVC = [[OSPGMainVC alloc] init];
-    CYLBaseNavigationController *homeNC = [[CYLBaseNavigationController alloc] initWithRootViewController:homeVC];
+    YPNavigationController *homeNC = [[YPNavigationController alloc] initWithRootViewController:homeVC];
     [homeNC cyl_setHideNavigationBarSeparator:YES];
     
     // 药学习
     OSPGLearnViewController *learnVC = [[OSPGLearnViewController alloc] init];
-    CYLBaseNavigationController *learnNC = [[CYLBaseNavigationController alloc] initWithRootViewController:learnVC];
+    YPNavigationController *learnNC = [[YPNavigationController alloc] initWithRootViewController:learnVC];
     [learnNC cyl_setHideNavigationBarSeparator:YES];
     
     // 消息
     OSPGMessageViewController *messageVC = [[OSPGMessageViewController alloc] init];
-    CYLBaseNavigationController *messageNC = [[CYLBaseNavigationController alloc] initWithRootViewController:messageVC];
+    YPNavigationController *messageNC = [[YPNavigationController alloc] initWithRootViewController:messageVC];
     [messageNC cyl_setHideNavigationBarSeparator:YES];
     
     // 我的
     OSPGAccountViewController *accountVC = [[OSPGAccountViewController alloc] init];
-    CYLBaseNavigationController *accountNC = [[CYLBaseNavigationController alloc] initWithRootViewController:accountVC];
+    YPNavigationController *accountNC = [[YPNavigationController alloc] initWithRootViewController:accountVC];
     [accountNC cyl_setHideNavigationBarSeparator:YES];
     
     NSArray *viewControllersArray = @[homeNC, learnNC, messageNC, accountNC];

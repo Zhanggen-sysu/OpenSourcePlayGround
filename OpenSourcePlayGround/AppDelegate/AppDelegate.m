@@ -7,8 +7,6 @@
 
 #import "AppDelegate.h"
 #import "YTKNetworkConfig.h"
-#import "OSPGMainVC.h"
-#import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 
 @interface AppDelegate ()
 
@@ -19,17 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    if (@available(iOS 13.0, *)) {
-
-    } else {
-        self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        [self.window setBackgroundColor:[UIColor whiteColor]];
-        
-        OSPGMainVC *vc = [[OSPGMainVC alloc] init];
-        YPNavigationController *nav = [[YPNavigationController alloc] initWithRootViewController:vc];
-        [self.window setRootViewController:nav];
-        [self.window makeKeyAndVisible];
-    }
     YTKNetworkConfig *config = [YTKNetworkConfig sharedConfig];
     config.baseUrl = @"https://api.themoviedb.org/3/";
     return YES;

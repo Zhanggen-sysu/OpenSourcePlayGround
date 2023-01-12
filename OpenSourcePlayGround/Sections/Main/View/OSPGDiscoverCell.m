@@ -100,8 +100,7 @@
                                                                            fromFormate:OSPGDateFormate_yyyyMMdd
                                                                              toFormate:OSPGDateFormate_MMMdyyyy];
     self.subLabel.text = [NSString stringWithFormat:@"%@ - %@", releaseDate, result.originalLanguage];
-    // TODO: genzhang 补充默认图
-    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@""]];
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
 }
 
 @end

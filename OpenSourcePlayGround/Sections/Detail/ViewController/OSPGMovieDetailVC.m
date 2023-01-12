@@ -10,6 +10,7 @@
 #import "OSPGMovieDetailManager.h"
 #import "UIImageView+WebCache.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
+#import "YPNavigationController+Configure.h"
 
 @interface OSPGMovieDetailVC ()<YPNavigationBarConfigureStyle>
 
@@ -28,7 +29,6 @@
 @property (nonatomic, strong) UILabel *releaseDateLabel;
 @property (nonatomic, strong) UILabel *runtimeLabel;
 
-
 @end
 
 @implementation OSPGMovieDetailVC
@@ -42,11 +42,9 @@
     [self loadData];
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (UIStatusBarStyle)preferredStatusBarStyle
 {
-    [super viewDidAppear:animated];
-    [self yp_refreshNavigationBarStyle];
-    self.navigationController.navigationBar.hidden = NO;
+    return UIStatusBarStyleLightContent;
 }
 
 #pragma mark - UI
@@ -54,6 +52,7 @@
 {
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.backdropImg];
+    [self.scrollView addSubview:self.posterImg];
     [self.scrollView addSubview:self.titleLabel];
     [self.scrollView addSubview:self.tagLineLabel];
 }
@@ -65,12 +64,18 @@
     }];
     [self.backdropImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(1.5 * SCREEN_WIDTH);
+        make.height.mas_equalTo(440 / 780.f * SCREEN_WIDTH);
+    }];
+    [self.posterImg mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(128.f);
+        make.height.mas_equalTo(192.f);
+        make.top.equalTo(self.backdropImg.mas_bottom).offset(-32.f);
+        make.left.equalTo(self.view).offset(15.f);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.backdropImg.mas_bottom).offset(15.f);
-        make.left.equalTo(self.view).offset(10.f);
-        make.right.equalTo(self.view).offset(-10.f);
+        make.top.equalTo(self.backdropImg.mas_bottom).offset(10.f);
+        make.left.equalTo(self.posterImg.mas_right).offset(10.f);
+        make.right.equalTo(self.view).offset(-15.f);
     }];
     [self.tagLineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.titleLabel.mas_bottom).offset(10.f);
@@ -80,7 +85,8 @@
 
 - (void)reloadUI
 {
-    [self.backdropImg sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:self.detail.backdropPath size:OSPGBackdropSize_w780] placeholderImage:[UIImage imageNamed:@""]];
+    [self.backdropImg sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:self.detail.backdropPath size:OSPGBackdropSize_w780] placeholderImage:[UIImage imageNamed:@"backdropDefault"]];
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:self.detail.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
     self.titleLabel.text = self.detail.title;
     self.tagLineLabel.text = self.detail.tagline;
 }
@@ -107,6 +113,7 @@
 {
     if (!_posterImg) {
         _posterImg = [[UIImageView alloc] init];
+        ViewBorderRadius(_posterImg, 10.f, 0, [UIColor whiteColor]);
     }
     return _posterImg;
 }

@@ -18,4 +18,19 @@
     return [UIColor whiteColor];
 }
 
+- (UIViewController *)childViewControllerForStatusBarStyle {
+    return self.visibleViewController;
+}
+
+- (UIViewController *)childViewControllerForStatusBarHidden {
+    return self.visibleViewController;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    return [self.visibleViewController preferredStatusBarStyle];
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return [self.visibleViewController prefersStatusBarHidden];
+}
 @end

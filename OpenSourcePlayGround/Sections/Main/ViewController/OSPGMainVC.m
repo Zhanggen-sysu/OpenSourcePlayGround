@@ -39,12 +39,6 @@ static NSInteger kDiscoverRowCount = 2;
     [self loadDefaultData:NO];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
 #pragma mark - Data
 - (void)loadDefaultData:(BOOL)loadMore
 {
@@ -139,7 +133,7 @@ static NSInteger kDiscoverRowCount = 2;
         _searchBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
         _searchBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
         [_searchBtn addTarget:self action:@selector(didTapSearchBtn) forControlEvents:UIControlEventTouchUpInside];
-        ViewBorderRadius(_searchBtn, 5.0f, 0, RGBColor(0, 0, 0));
+        ViewBorderRadius(_searchBtn, 5.0f, 0, [UIColor whiteColor]);
     }
     return _searchBtn;
 }

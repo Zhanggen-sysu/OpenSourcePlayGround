@@ -11,6 +11,8 @@ ICON基本上取自[iconfont](https://www.iconfont.cn/?spm=a313x.7781069.1998910
 
 设计参考：[behance](https://www.behance.net/)
 
+色值参考：[颜色表及html代码](http://xh.5156edu.com/page/z1015m9220j18754.html)
+
 后面可能会看情况接入更多的API
 
 ### 网络请求相关
