@@ -140,6 +140,16 @@ static OSPGCommonHelper *_manager = nil;
     [hud hideAnimated:YES afterDelay:duration];
 }
 
++ (void)showLoadingInView:(UIView *)view animated:(BOOL)animated
+{
+    [MBProgressHUD showHUDAddedTo:view animated:animated];
+}
+
++ (void)hideLoadingInView:(UIView *)view animated:(BOOL)animated
+{
+    [MBProgressHUD hideHUDForView:view animated:animated];
+}
+
 + (NSURL *)getPosterUrl:(NSString *)string size:(OSPGPosterSize)size
 {
     NSString *width = @"w342";

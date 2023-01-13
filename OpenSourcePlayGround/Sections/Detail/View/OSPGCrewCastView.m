@@ -108,6 +108,7 @@ static NSInteger kCastCount = 4;
         _castCollection.showsHorizontalScrollIndicator = NO;
         _castCollection.delegate = self;
         _castCollection.dataSource = self;
+        _castCollection.contentInset = UIEdgeInsetsMake(0, 0, 0, 15.f);
         [_castCollection registerClass:[OSPGCastSmallCell class] forCellWithReuseIdentifier:kCastSmallCellID];
     }
     return _castCollection;

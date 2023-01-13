@@ -42,7 +42,9 @@ static NSInteger kDiscoverRowCount = 2;
 #pragma mark - Data
 - (void)loadDefaultData:(BOOL)loadMore
 {
+    [OSPGCommonHelper showLoadingInView:self.view animated:YES];
     [[OSPGDiscoverManager sharedManager] getDiscoverDefault:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        [OSPGCommonHelper hideLoadingInView:self.view animated:YES];
         if (isSuccess) {
             OSPGDiscoverResponse *response = (OSPGDiscoverResponse *)rsp;
             if (loadMore) {

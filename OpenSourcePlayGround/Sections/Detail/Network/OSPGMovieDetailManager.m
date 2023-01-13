@@ -10,6 +10,8 @@
 #import "OSPGMovieDetailRequest.h"
 #import "OSPGCrewCastRequest.h"
 #import "OSPGCrewCastResponse.h"
+#import "OSPGImageRequest.h"
+#import "OSPGImageResponse.h"
 
 @implementation OSPGMovieDetailManager
 
@@ -56,6 +58,13 @@ static OSPGMovieDetailManager *_manager = nil;
     request.movieId = movieId;
     [request startRequestWithRspClass:[OSPGCrewCastResponse class]
                         completeBlock:block];
+}
+
+- (void)getImagesWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block
+{
+    OSPGImageRequest *requst = [[OSPGImageRequest alloc] init];
+    requst.movieId = movieId;
+    [requst startRequestWithRspClass:[OSPGImageResponse class] completeBlock:block];
 }
 
 @end

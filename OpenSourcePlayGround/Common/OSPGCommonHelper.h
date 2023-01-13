@@ -57,6 +57,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSDate *)dateFromString:(NSString *)dateString formate:(OSPGDateFormate)formate;
 + (instancetype)sharedManager;
 + (void)showMessage:(NSString *)message inView:(UIView *)view duration:(NSInteger)duration;
++ (void)showLoadingInView:(UIView *)view animated:(BOOL)animated;
++ (void)hideLoadingInView:(UIView *)view animated:(BOOL)animated;
 + (UIWindow *)getKeyWindow;
 + (NSURL *)getPosterUrl:(NSString *)string size:(OSPGPosterSize)size;
 + (NSURL *)getBackdropUrl:(NSString *)string size:(OSPGBackdropSize)size;

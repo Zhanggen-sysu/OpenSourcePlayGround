@@ -9,8 +9,10 @@
 #import "OSPGMovieDetailManager.h"
 #import "OSPGMovieDetailView.h"
 #import "OSPGCrewCastView.h"
+#import "OSPGPhotoView.h"
 #import "OSPGMovieDetailResponse.h"
 #import "OSPGCrewCastResponse.h"
+#import "OSPGImageResponse.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 #import "YPNavigationController+Configure.h"
 
@@ -23,8 +25,11 @@
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) OSPGMovieDetailView *detailView;
 @property (nonatomic, strong) OSPGCrewCastView *crewcastView;
+@property (nonatomic, strong) OSPGPhotoView *photoView;
 
+@property (nonatomic, strong) OSPGMovieDetailResponse *detailModel;
 @property (nonatomic, strong) OSPGCrewCastResponse *crewcastModel;
+@property (nonatomic, strong) OSPGImageResponse *imagesModel;
 
 @end
 
@@ -52,6 +57,7 @@
     [self.scrollView addSubview:self.contentView];
     [self.contentView addSubview:self.detailView];
     [self.contentView addSubview:self.crewcastView];
+    [self.contentView addSubview:self.photoView];
 }
 
 - (void)defineLayout
@@ -68,6 +74,10 @@
     }];
     [self.crewcastView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.detailView.mas_bottom).offset(15.f);
+        make.leading.trailing.equalTo(self.contentView);
+    }];
+    [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.crewcastView.mas_bottom).offset(15.f);
         make.leading.trailing.bottom.equalTo(self.contentView);
     }];
 }
@@ -77,6 +87,7 @@
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
         _scrollView.showsVerticalScrollIndicator = NO;
+        _scrollView.backgroundColor = RGBColor(240, 240, 240);
         // Tips: 去除scrollView顶部空白区域
         if (@available(iOS 11, *)) {
             _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -110,6 +121,14 @@
         _crewcastView = [[OSPGCrewCastView alloc] init];
     }
     return _crewcastView;
+}
+
+- (OSPGPhotoView *)photoView
+{
+    if (!_photoView) {
+        _photoView = [[OSPGPhotoView alloc] init];
+    }
+    return _photoView;
 }
 
 #pragma mark - UISrollviewDelegate
@@ -164,20 +183,32 @@
 #pragma mark - Data
 - (void)loadData
 {
+    [OSPGCommonHelper showLoadingInView:self.view animated:YES];
     [[OSPGMovieDetailManager sharedManager] getMovieDetailWithId:self.movieId
                                                  completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        [OSPGCommonHelper hideLoadingInView:self.view animated:YES];
         if (isSuccess) {
-            OSPGMovieDetailResponse* response = (OSPGMovieDetailResponse *)rsp;
-            [self.detailView updateWithModel:response];
+            self.detailModel = (OSPGMovieDetailResponse *)rsp;
+            [self.detailView updateWithModel:self.detailModel];
         } else {
             [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
         }
     }];
     
     [[OSPGMovieDetailManager sharedManager] getCastCrewWithId:self.movieId completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        [OSPGCommonHelper hideLoadingInView:self.view animated:YES];
         if (isSuccess) {
             self.crewcastModel = (OSPGCrewCastResponse *)rsp;
-            [self.crewcastView updateWithModel:rsp];
+            [self.crewcastView updateWithModel:self.crewcastModel];
+        } else {
+            [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
+        }
+    }];
+    
+    [[OSPGMovieDetailManager sharedManager] getImagesWithId:self.movieId completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        if (isSuccess) {
+            self.imagesModel = (OSPGImageResponse *)rsp;
+            [self.photoView updateWithModel:self.imagesModel];
         } else {
             [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
         }
