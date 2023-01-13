@@ -1,13 +1,13 @@
 //
-//  OSPGMovieDetailRequest.m
+//  OSPGCrewCastRequest.m
 //  OpenSourcePlayGround
 //
-//  Created by GenZhang on 2023/1/11.
+//  Created by GenZhang on 2023/1/12.
 //
 
-#import "OSPGMovieDetailRequest.h"
+#import "OSPGCrewCastRequest.h"
 
-@implementation OSPGMovieDetailRequest
+@implementation OSPGCrewCastRequest
 
 + (NSDictionary<NSString *, NSString *> *)properties
 {
@@ -19,7 +19,7 @@
 
 - (NSString *)requestUrl
 {
-    return [NSString stringWithFormat:@"movie/%@", @(self.movieId)];
+    return [NSString stringWithFormat:@"movie/%@/credits", @(self.movieId)];
 }
 
 @end

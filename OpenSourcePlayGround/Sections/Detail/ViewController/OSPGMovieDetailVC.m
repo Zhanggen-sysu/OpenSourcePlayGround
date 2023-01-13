@@ -6,28 +6,25 @@
 //
 
 #import "OSPGMovieDetailVC.h"
-#import "OSPGMovieDetailResponse.h"
 #import "OSPGMovieDetailManager.h"
-#import "UIImageView+WebCache.h"
+#import "OSPGMovieDetailView.h"
+#import "OSPGCrewCastView.h"
+#import "OSPGMovieDetailResponse.h"
+#import "OSPGCrewCastResponse.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 #import "YPNavigationController+Configure.h"
 
 @interface OSPGMovieDetailVC ()<YPNavigationBarConfigureStyle>
 
-@property (nonatomic, strong) OSPGMovieDetailResponse *detail;
 @property (nonatomic, assign) CGFloat gradientProgress;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
-@property (nonatomic, strong) UIImageView *backdropImg;
-@property (nonatomic, strong) UIImageView *posterImg;
-@property (nonatomic, strong) UILabel *titleLabel;
-@property (nonatomic, strong) UIButton *moreBtn;
-@property (nonatomic, strong) UILabel *tagLineLabel;
-@property (nonatomic, strong) UILabel *directorLabel;
-@property (nonatomic, strong) UILabel *ratingLabel;
-@property (nonatomic, strong) UILabel *genreLabel;
-@property (nonatomic, strong) UILabel *releaseDateLabel;
-@property (nonatomic, strong) UILabel *runtimeLabel;
+// Tips: 利用这个view使得UIScrollView的contentSize自适应
+@property (nonatomic, strong) UIView *contentView;
+@property (nonatomic, strong) OSPGMovieDetailView *detailView;
+@property (nonatomic, strong) OSPGCrewCastView *crewcastView;
+
+@property (nonatomic, strong) OSPGCrewCastResponse *crewcastModel;
 
 @end
 
@@ -37,6 +34,7 @@
 {
     [super viewDidLoad];
     
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(didTapAddBtn)];
     [self setupSubviews];
     [self defineLayout];
     [self loadData];
@@ -51,10 +49,9 @@
 - (void)setupSubviews
 {
     [self.view addSubview:self.scrollView];
-    [self.scrollView addSubview:self.backdropImg];
-    [self.scrollView addSubview:self.posterImg];
-    [self.scrollView addSubview:self.titleLabel];
-    [self.scrollView addSubview:self.tagLineLabel];
+    [self.scrollView addSubview:self.contentView];
+    [self.contentView addSubview:self.detailView];
+    [self.contentView addSubview:self.crewcastView];
 }
 
 - (void)defineLayout
@@ -62,97 +59,73 @@
     [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    [self.backdropImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view);
-        make.height.mas_equalTo(440 / 780.f * SCREEN_WIDTH);
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.scrollView);
+        make.width.equalTo(self.scrollView);
     }];
-    [self.posterImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(128.f);
-        make.height.mas_equalTo(192.f);
-        make.top.equalTo(self.backdropImg.mas_bottom).offset(-32.f);
-        make.left.equalTo(self.view).offset(15.f);
+    [self.detailView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.trailing.equalTo(self.contentView);
     }];
-    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.backdropImg.mas_bottom).offset(10.f);
-        make.left.equalTo(self.posterImg.mas_right).offset(10.f);
-        make.right.equalTo(self.view).offset(-15.f);
+    [self.crewcastView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.detailView.mas_bottom).offset(15.f);
+        make.leading.trailing.bottom.equalTo(self.contentView);
     }];
-    [self.tagLineLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.titleLabel.mas_bottom).offset(10.f);
-        make.left.right.equalTo(self.titleLabel);
-    }];
-}
-
-- (void)reloadUI
-{
-    [self.backdropImg sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:self.detail.backdropPath size:OSPGBackdropSize_w780] placeholderImage:[UIImage imageNamed:@"backdropDefault"]];
-    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:self.detail.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
-    self.titleLabel.text = self.detail.title;
-    self.tagLineLabel.text = self.detail.tagline;
 }
 
 - (UIScrollView *)scrollView
 {
     if (!_scrollView) {
         _scrollView = [[UIScrollView alloc] init];
-        _scrollView.backgroundColor = RGBColor(240, 240, 240);
         _scrollView.showsVerticalScrollIndicator = NO;
+        // Tips: 去除scrollView顶部空白区域
+        if (@available(iOS 11, *)) {
+            _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            _scrollView.automaticallyAdjustsScrollIndicatorInsets = NO;
+        }
     }
     return _scrollView;
 }
 
-- (UIImageView *)backdropImg
+- (UIView *)contentView
 {
-    if (!_backdropImg) {
-        _backdropImg = [[UIImageView alloc] init];
+    if (!_contentView) {
+        _contentView = [[UIView alloc] init];
+        _contentView.backgroundColor = RGBColor(240, 240, 240);
     }
-    return _backdropImg;
+    return _contentView;
 }
 
-- (UIImageView *)posterImg
+- (OSPGMovieDetailView *)detailView
 {
-    if (!_posterImg) {
-        _posterImg = [[UIImageView alloc] init];
-        ViewBorderRadius(_posterImg, 10.f, 0, [UIColor whiteColor]);
+    if (!_detailView) {
+        _detailView = [[OSPGMovieDetailView alloc] init];
     }
-    return _posterImg;
+    return _detailView;
 }
 
-- (UILabel *)titleLabel
+- (OSPGCrewCastView *)crewcastView
 {
-    if (!_titleLabel)
-    {
-        _titleLabel = [[UILabel alloc] init];
-        _titleLabel.font = kBoldFont(16.f);
+    if (!_crewcastView) {
+        _crewcastView = [[OSPGCrewCastView alloc] init];
     }
-    return _titleLabel;
+    return _crewcastView;
 }
 
-- (UILabel *)tagLineLabel
-{
-    if (!_tagLineLabel)
-    {
-        _tagLineLabel = [[UILabel alloc] init];
-        _tagLineLabel.font = kFont(14.f);
-        _tagLineLabel.textColor = RGBColor(128, 128, 128);
-    }
-    return _tagLineLabel;
-}
-
+#pragma mark - UISrollviewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    CGFloat headerHeight = CGRectGetHeight(self.backdropImg.frame);
+    CGFloat headerHeight = CGRectGetHeight(self.detailView.frame);
     if (@available(iOS 11,*)) {
         headerHeight -= self.view.safeAreaInsets.top;
     } else {
         headerHeight -= [self.topLayoutGuide length];
     }
-    
+
     CGFloat progress = scrollView.contentOffset.y + scrollView.contentInset.top;
     CGFloat gradientProgress = MIN(1, MAX(0, progress  / headerHeight));
     gradientProgress = gradientProgress * gradientProgress * gradientProgress * gradientProgress;
     if (gradientProgress != self.gradientProgress) {
         self.gradientProgress = gradientProgress;
-        self.titleLabel.textColor = self.gradientProgress == 1 ? [self yp_navigationBarTintColor] : [UIColor clearColor];
         [self yp_refreshNavigationBarStyle];
     }
 }
@@ -194,12 +167,27 @@
     [[OSPGMovieDetailManager sharedManager] getMovieDetailWithId:self.movieId
                                                  completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
         if (isSuccess) {
-            self.detail = (OSPGMovieDetailResponse *)rsp;
-            [self reloadUI];
+            OSPGMovieDetailResponse* response = (OSPGMovieDetailResponse *)rsp;
+            [self.detailView updateWithModel:response];
         } else {
             [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
         }
     }];
+    
+    [[OSPGMovieDetailManager sharedManager] getCastCrewWithId:self.movieId completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        if (isSuccess) {
+            self.crewcastModel = (OSPGCrewCastResponse *)rsp;
+            [self.crewcastView updateWithModel:rsp];
+        } else {
+            [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
+        }
+    }];
+}
+
+#pragma mark - action
+- (void)didTapAddBtn
+{
+    
 }
 
 

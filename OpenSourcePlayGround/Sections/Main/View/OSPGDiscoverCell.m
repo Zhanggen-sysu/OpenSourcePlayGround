@@ -45,16 +45,16 @@
 - (void)defineLayout
 {
     [self.posterImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.contentView);
+        make.top.leading.trailing.equalTo(self.contentView);
         make.height.mas_equalTo(self.contentView.width * 1.5);
     }];
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.posterImg.mas_bottom).offset(10.f);
-        make.left.right.equalTo(self.contentView);
+        make.leading.trailing.equalTo(self.contentView);
     }];
     [self.subLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
-        make.left.right.equalTo(self.contentView);
+        make.leading.trailing.equalTo(self.contentView);
     }];
 }
 

@@ -7,6 +7,9 @@
 
 #import "OSPGMovieDetailManager.h"
 #import "OSPGMovieDetailResponse.h"
+#import "OSPGMovieDetailRequest.h"
+#import "OSPGCrewCastRequest.h"
+#import "OSPGCrewCastResponse.h"
 
 @implementation OSPGMovieDetailManager
 
@@ -44,6 +47,14 @@ static OSPGMovieDetailManager *_manager = nil;
     OSPGMovieDetailRequest *request = [[OSPGMovieDetailRequest alloc] init];
     request.movieId = movieId;
     [request startRequestWithRspClass:[OSPGMovieDetailResponse class]
+                        completeBlock:block];
+}
+
+- (void)getCastCrewWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block
+{
+    OSPGCrewCastRequest *request = [[OSPGCrewCastRequest alloc] init];
+    request.movieId = movieId;
+    [request startRequestWithRspClass:[OSPGCrewCastResponse class]
                         completeBlock:block];
 }
 

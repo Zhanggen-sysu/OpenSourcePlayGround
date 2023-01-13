@@ -16,7 +16,7 @@ typedef NS_ENUM(NSUInteger, OSPGDateFormate) {
 };
 
 typedef NS_ENUM(NSUInteger, OSPGPosterSize) {
-    OSPGPosterSize_Default,
+    OSPGPosterSize_default,
     OSPGPosterSize_w92,
     OSPGPosterSize_w154,
     OSPGPosterSize_w185,
@@ -27,11 +27,19 @@ typedef NS_ENUM(NSUInteger, OSPGPosterSize) {
 };
 
 typedef NS_ENUM(NSUInteger, OSPGBackdropSize) {
-    OSPGBackdropSize_Default,
+    OSPGBackdropSize_default,
     OSPGBackdropSize_w300,
     OSPGBackdropSize_w780,
     OSPGBackdropSize_w1280,
     OSPGBackdropSize_original,
+};
+
+typedef NS_ENUM(NSUInteger, OSPGProfileSize) {
+    OSPGProfileSize_default,
+    OSPGProfileSize_w45,
+    OSPGProfileSize_w185,
+    OSPGProfileSize_h632,
+    OSPGProfileSize_original,
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -52,6 +60,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIWindow *)getKeyWindow;
 + (NSURL *)getPosterUrl:(NSString *)string size:(OSPGPosterSize)size;
 + (NSURL *)getBackdropUrl:(NSString *)string size:(OSPGBackdropSize)size;
++ (NSURL *)getProfileUrl:(NSString *)string size:(OSPGProfileSize)size;
++ (NSAttributedString *)generateRatingString:(double)voteAverage;
++ (NSString *)getRumtimeString:(NSInteger)runtime;
++ (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
 
 @end
 

@@ -33,6 +33,14 @@
 		3DD52957296E636500414684 /* OSPGProductionCountry.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52956296E636500414684 /* OSPGProductionCountry.m */; };
 		3DD5295A296E638E00414684 /* OSPGSpokenLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52959296E638E00414684 /* OSPGSpokenLanguage.m */; };
 		3DD5295D296E685300414684 /* OSPGMovieDetailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5295C296E685300414684 /* OSPGMovieDetailManager.m */; };
+		3DD52968296FF98400414684 /* OSPGCrewCastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52967296FF98400414684 /* OSPGCrewCastView.m */; };
+		3DD5296B296FF9E800414684 /* OSPGMovieDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5296A296FF9E800414684 /* OSPGMovieDetailView.m */; };
+		3DD5296E296FFB4F00414684 /* OSPGBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5296D296FFB4F00414684 /* OSPGBaseView.m */; };
+		3DD529722970101900414684 /* OSPGCastSmallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529712970101900414684 /* OSPGCastSmallCell.m */; };
+		3DD529752970119600414684 /* OSPGCrewCastResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529742970119600414684 /* OSPGCrewCastResponse.m */; };
+		3DD52978297011B600414684 /* OSPGCrewCastRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52977297011B600414684 /* OSPGCrewCastRequest.m */; };
+		3DD5297B297012BE00414684 /* OSPGCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5297A297012BE00414684 /* OSPGCast.m */; };
+		3DD5297E297012CC00414684 /* OSPGCrew.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5297D297012CC00414684 /* OSPGCrew.m */; };
 		3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600A29482834006B20E7 /* AppDelegate.m */; };
 		3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600D29482834006B20E7 /* SceneDelegate.m */; };
 		3DF2601429482834006B20E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601229482834006B20E7 /* Main.storyboard */; };
@@ -98,6 +106,22 @@
 		3DD52959296E638E00414684 /* OSPGSpokenLanguage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSpokenLanguage.m; sourceTree = "<group>"; };
 		3DD5295B296E685300414684 /* OSPGMovieDetailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailManager.h; sourceTree = "<group>"; };
 		3DD5295C296E685300414684 /* OSPGMovieDetailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailManager.m; sourceTree = "<group>"; };
+		3DD52966296FF98400414684 /* OSPGCrewCastView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrewCastView.h; sourceTree = "<group>"; };
+		3DD52967296FF98400414684 /* OSPGCrewCastView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrewCastView.m; sourceTree = "<group>"; };
+		3DD52969296FF9E800414684 /* OSPGMovieDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGMovieDetailView.h; sourceTree = "<group>"; };
+		3DD5296A296FF9E800414684 /* OSPGMovieDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGMovieDetailView.m; sourceTree = "<group>"; };
+		3DD5296C296FFB4F00414684 /* OSPGBaseView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGBaseView.h; sourceTree = "<group>"; };
+		3DD5296D296FFB4F00414684 /* OSPGBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGBaseView.m; sourceTree = "<group>"; };
+		3DD529702970101900414684 /* OSPGCastSmallCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCastSmallCell.h; sourceTree = "<group>"; };
+		3DD529712970101900414684 /* OSPGCastSmallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCastSmallCell.m; sourceTree = "<group>"; };
+		3DD529732970119600414684 /* OSPGCrewCastResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrewCastResponse.h; sourceTree = "<group>"; };
+		3DD529742970119600414684 /* OSPGCrewCastResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrewCastResponse.m; sourceTree = "<group>"; };
+		3DD52976297011B600414684 /* OSPGCrewCastRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrewCastRequest.h; sourceTree = "<group>"; };
+		3DD52977297011B600414684 /* OSPGCrewCastRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrewCastRequest.m; sourceTree = "<group>"; };
+		3DD52979297012BE00414684 /* OSPGCast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCast.h; sourceTree = "<group>"; };
+		3DD5297A297012BE00414684 /* OSPGCast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCast.m; sourceTree = "<group>"; };
+		3DD5297C297012CC00414684 /* OSPGCrew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrew.h; sourceTree = "<group>"; };
+		3DD5297D297012CC00414684 /* OSPGCrew.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrew.m; sourceTree = "<group>"; };
 		3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSourcePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF2600929482834006B20E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DF2600A29482834006B20E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -136,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				3DD52945296E54F300414684 /* Model */,
+				3DD5296F296FFB5A00414684 /* View */,
 				3DC44E7D294AC1C100439323 /* ViewController */,
 			);
 			path = Base;
@@ -416,6 +441,12 @@
 		3DD52943296E546500414684 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DD52966296FF98400414684 /* OSPGCrewCastView.h */,
+				3DD52967296FF98400414684 /* OSPGCrewCastView.m */,
+				3DD52969296FF9E800414684 /* OSPGMovieDetailView.h */,
+				3DD5296A296FF9E800414684 /* OSPGMovieDetailView.m */,
+				3DD529702970101900414684 /* OSPGCastSmallCell.h */,
+				3DD529712970101900414684 /* OSPGCastSmallCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -423,6 +454,14 @@
 		3DD52944296E546A00414684 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DD52979297012BE00414684 /* OSPGCast.h */,
+				3DD5297A297012BE00414684 /* OSPGCast.m */,
+				3DD5297C297012CC00414684 /* OSPGCrew.h */,
+				3DD5297D297012CC00414684 /* OSPGCrew.m */,
+				3DD52976297011B600414684 /* OSPGCrewCastRequest.h */,
+				3DD52977297011B600414684 /* OSPGCrewCastRequest.m */,
+				3DD529732970119600414684 /* OSPGCrewCastResponse.h */,
+				3DD529742970119600414684 /* OSPGCrewCastResponse.m */,
 				3DD5294F296E633E00414684 /* OSPGGenre.h */,
 				3DD52950296E633E00414684 /* OSPGGenre.m */,
 				3DD52949296E602900414684 /* OSPGMovieDetailRequest.h */,
@@ -448,6 +487,15 @@
 				3DD5292F296BFE8800414684 /* OSPGBaseModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3DD5296F296FFB5A00414684 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DD5296C296FFB4F00414684 /* OSPGBaseView.h */,
+				3DD5296D296FFB4F00414684 /* OSPGBaseView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3DF25FFD29482834006B20E7 = {
@@ -632,32 +680,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DC44E89294ACD2700439323 /* OSPGMessageViewController.m in Sources */,
+				3DD5297E297012CC00414684 /* OSPGCrew.m in Sources */,
 				3DD52954296E635900414684 /* OSPGProductionCompany.m in Sources */,
 				3DC44E86294ACC8A00439323 /* OSPGAccountViewController.m in Sources */,
+				3DD529752970119600414684 /* OSPGCrewCastResponse.m in Sources */,
 				3DD52933296C086D00414684 /* OSPGDiscoverCell.m in Sources */,
 				3DD5295D296E685300414684 /* OSPGMovieDetailManager.m in Sources */,
 				3DD52951296E633E00414684 /* OSPGGenre.m in Sources */,
 				3DD52948296E553000414684 /* OSPGMovieDetailVC.m in Sources */,
 				3D9ADB7E2966E78A000D526B /* OSPGMainVC.m in Sources */,
+				3DD5297B297012BE00414684 /* OSPGCast.m in Sources */,
 				3DAE8340295988AC00466D3F /* UIView+Extension.m in Sources */,
 				3DD52927296BBEA200414684 /* OSPGDiscoverResult.m in Sources */,
 				3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */,
 				3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */,
 				3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */,
+				3DD52978297011B600414684 /* OSPGCrewCastRequest.m in Sources */,
+				3DD5296B296FF9E800414684 /* OSPGMovieDetailView.m in Sources */,
 				3DD5294B296E602900414684 /* OSPGMovieDetailRequest.m in Sources */,
 				3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */,
 				3DD5291E296BB75B00414684 /* OSPGDiscoverResponse.m in Sources */,
 				3DC44E83294AC80500439323 /* SceneDelegate+CYLTabBar.m in Sources */,
 				3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */,
 				3DC44E9B294AFB1600439323 /* CYLPlusButtonSubclass.m in Sources */,
+				3DD529722970101900414684 /* OSPGCastSmallCell.m in Sources */,
 				3D9ADB812966E7D4000D526B /* OSPGBaseVC.m in Sources */,
 				3DD5292A296BEF6500414684 /* OSPGBaseRequest.m in Sources */,
 				3DF2601C29482835006B20E7 /* main.m in Sources */,
 				3D9ADB9329682FB0000D526B /* OSPGDiscoverRequest.m in Sources */,
+				3DD5296E296FFB4F00414684 /* OSPGBaseView.m in Sources */,
 				3DC44EA3294B177B00439323 /* OSPGTCMViewController.m in Sources */,
 				3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */,
 				3DD5295A296E638E00414684 /* OSPGSpokenLanguage.m in Sources */,
 				3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */,
+				3DD52968296FF98400414684 /* OSPGCrewCastView.m in Sources */,
 				3DD5294E296E627300414684 /* OSPGMovieDetailResponse.m in Sources */,
 				3DD52957296E636500414684 /* OSPGProductionCountry.m in Sources */,
 			);

@@ -74,7 +74,7 @@ static NSInteger kDiscoverRowCount = 2;
 - (void)defineLayout
 {
     [self.navigationBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.equalTo(self.view);
+        make.top.leading.trailing.equalTo(self.view);
     }];
     [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
@@ -83,16 +83,16 @@ static NSInteger kDiscoverRowCount = 2;
             make.top.mas_equalTo(10.f);
         }
         make.bottom.equalTo(self.navigationBar).offset(-10.f);
-        make.left.equalTo(self.navigationBar).offset(15.f);
-        make.right.equalTo(self.navigationBar).offset(-15.f);
+        make.leading.equalTo(self.navigationBar).offset(15.f);
+        make.trailing.equalTo(self.navigationBar).offset(-15.f);
         make.height.mas_equalTo(40.f);
     }];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.navigationBar.mas_bottom).offset(10.f);
         make.bottom.equalTo(self.view);
-        make.left.equalTo(self.view).offset(10.f);
-        make.right.equalTo(self.view).offset(-10.f);
+        make.leading.equalTo(self.view).offset(10.f);
+        make.trailing.equalTo(self.view).offset(-10.f);
     }];
 }
 

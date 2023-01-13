@@ -199,4 +199,77 @@ static OSPGCommonHelper *_manager = nil;
     return [NSURL URLWithString:backdropPath];
 }
 
++ (NSURL *)getProfileUrl:(NSString *)string size:(OSPGProfileSize)size
+{
+    NSString *width = @"w185";
+    switch (size) {
+        case OSPGProfileSize_w45:
+            width = @"w45";
+            break;
+        case OSPGProfileSize_w185:
+            width = @"w185";
+            break;
+        case OSPGProfileSize_h632:
+            width = @"h632";
+            break;
+        case OSPGProfileSize_original:
+            width = @"original";
+            break;
+            
+        default:
+            break;
+    }
+    
+    NSString *profilePath = [NSString stringWithFormat:@"%@%@%@", API_IMG_BASEURL, width, string];
+    return [NSURL URLWithString:profilePath];
+}
+
++ (NSAttributedString *)generateRatingString:(double)voteAverage
+{
+    NSMutableAttributedString *attStr = [[NSMutableAttributedString alloc] init];
+    double tmp = voteAverage;
+    for (NSInteger i = 0; i < 5; i ++)
+    {
+        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+        if (voteAverage >= 2) {
+            voteAverage -= 2;
+            attach.image = [UIImage imageNamed:@"starFullIcon"];
+        } else if (voteAverage >= 1) {
+            voteAverage -= 1;
+            attach.image = [UIImage imageNamed:@"starHalfIcon"];
+        } else {
+            attach.image = [UIImage imageNamed:@"starEmptyIcon"];
+        }
+        attach.bounds = CGRectMake(0, -5, 20.f, 20.f);
+        [attStr appendAttributedString:[NSAttributedString attributedStringWithAttachment:attach]];
+        [attStr appendAttributedString:[[NSAttributedString alloc] initWithString:@"  "]];
+    }
+    NSDictionary *attri = @{
+        NSFontAttributeName: kBoldFont(14.f),
+        NSForegroundColorAttributeName: RGBColor(255, 215, 0),
+    };
+    NSAttributedString *voteStr = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.1f", tmp] attributes:attri];
+    NSDictionary *attri1 = @{
+        NSFontAttributeName: kFont(10.f),
+        NSForegroundColorAttributeName: RGBColor(128, 128, 128),
+    };
+    NSAttributedString *totalStr = [[NSAttributedString alloc] initWithString:@" / 10" attributes:attri1];
+    [attStr appendAttributedString:voteStr];
+    [attStr appendAttributedString:totalStr];
+    return attStr;
+}
+
++ (NSString *)getRumtimeString:(NSInteger)runtime
+{
+    return [NSString stringWithFormat:@"%ldhrs %ldmin", runtime/60, runtime%60];
+}
+
++ (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width
+{
+    NSDictionary * attriDic = @{NSFontAttributeName : font};
+    CGSize size = CGSizeMake(width, CGFLOAT_MAX);
+    size = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attriDic context:nil].size;
+    return CGSizeMake(size.width, ceil(size.height));
+}
+
 @end

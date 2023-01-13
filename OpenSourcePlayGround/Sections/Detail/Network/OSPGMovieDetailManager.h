@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "OSPGMovieDetailRequest.h"
+#import "OSPGBaseRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)sharedManager;
 
 - (void)getMovieDetailWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block;
+- (void)getCastCrewWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block;
 
 @end
 
