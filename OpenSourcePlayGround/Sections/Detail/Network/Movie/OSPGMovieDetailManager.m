@@ -12,6 +12,14 @@
 #import "OSPGCrewCastResponse.h"
 #import "OSPGImageRequest.h"
 #import "OSPGImageResponse.h"
+#import "OSPGReviewRequest.h"
+#import "OSPGReviewResponse.h"
+
+@interface OSPGMovieDetailManager ()
+
+@property (nonatomic, assign) NSInteger reviewPage;
+
+@end
 
 @implementation OSPGMovieDetailManager
 
@@ -65,6 +73,16 @@ static OSPGMovieDetailManager *_manager = nil;
     OSPGImageRequest *requst = [[OSPGImageRequest alloc] init];
     requst.movieId = movieId;
     [requst startRequestWithRspClass:[OSPGImageResponse class] completeBlock:block];
+}
+
+
+- (void)getReviewsWithId:(NSInteger)movieId loadMore:(BOOL)loadMore completionBlock:(OSPGCommonResponseBlock)block
+{
+    self.reviewPage = loadMore ? ++self.reviewPage : 1;
+    OSPGReviewRequest *request = [[OSPGReviewRequest alloc] init];
+    request.movieId = movieId;
+    request.page = self.reviewPage;
+    [request startRequestWithRspClass:[OSPGReviewResponse class] completeBlock:block];
 }
 
 @end

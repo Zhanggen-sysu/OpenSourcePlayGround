@@ -14,7 +14,6 @@
 #import "OSPGMovieDetailVC.h"
 #import "OSPGDiscoverResult.h"
 
-static NSString *kDiscoverCellID = @"kDiscoverCellID";
 // 每行cell数
 static NSInteger kDiscoverRowCount = 2;
 
@@ -101,7 +100,7 @@ static NSInteger kDiscoverRowCount = 2;
 #pragma mark - UICollectionViewDelegate
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    OSPGDiscoverCell *cell = (OSPGDiscoverCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kDiscoverCellID forIndexPath:indexPath];
+    OSPGDiscoverCell *cell = (OSPGDiscoverCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OSPGDiscoverCell class]) forIndexPath:indexPath];
     OSPGDiscoverResult *result = self.data[indexPath.row];
     [cell updateWithModel:result];
     return cell;
@@ -163,7 +162,7 @@ static NSInteger kDiscoverRowCount = 2;
         _collectionView.showsVerticalScrollIndicator = NO;
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [_collectionView registerClass:[OSPGDiscoverCell class] forCellWithReuseIdentifier:kDiscoverCellID];
+        [_collectionView registerClass:[OSPGDiscoverCell class] forCellWithReuseIdentifier:NSStringFromClass([OSPGDiscoverCell class])];
         WeakSelf(self);
         _collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             StrongSelfReturnNil(self);

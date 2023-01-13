@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getMovieDetailWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block;
 - (void)getCastCrewWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block;
 - (void)getImagesWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block;
+- (void)getReviewsWithId:(NSInteger)movieId loadMore:(BOOL)loadMore completionBlock:(OSPGCommonResponseBlock)block;
 
 @end
 

@@ -11,13 +11,12 @@
 #import "OSPGBackdrop.h"
 #import "OSPGCommonHelper.h"
 
-static NSString *kPhotoCellID = @"kPhotoCellID";
-
 @interface OSPGPhotoView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) OSPGImageResponse *model;
 @property (nonatomic, strong) UICollectionView *photoCollection;
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong) UIImageView *rightArrowIcon;
 
 @end
 
@@ -29,6 +28,7 @@ static NSString *kPhotoCellID = @"kPhotoCellID";
     self.backgroundColor = [UIColor whiteColor];
     [self addSubview:self.titleLabel];
     [self addSubview:self.photoCollection];
+    [self addSubview:self.rightArrowIcon];
 }
 
 - (void)defineLayout
@@ -45,12 +45,17 @@ static NSString *kPhotoCellID = @"kPhotoCellID";
         make.height.mas_equalTo(110.f);
         make.bottom.equalTo(self).offset(-10.f);
     }];
+    [self.rightArrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self).offset(-15.f);
+        make.centerY.equalTo(self.titleLabel);
+        make.size.mas_equalTo(CGSizeMake(14.f, 14.f));
+    }];
 }
 
 #pragma mark - UICollectionViewDelegate
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    OSPGPhotoCell *cell = (OSPGPhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kPhotoCellID forIndexPath:indexPath];
+    OSPGPhotoCell *cell = (OSPGPhotoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OSPGPhotoCell class]) forIndexPath:indexPath];
     OSPGBackdrop *backdrop = self.model.backdrops[indexPath.row];
     [cell updateWithUrl:[OSPGCommonHelper getBackdropUrl:backdrop.filePath size:OSPGBackdropSize_w300]];
     return cell;
@@ -83,9 +88,18 @@ static NSString *kPhotoCellID = @"kPhotoCellID";
         _photoCollection.delegate = self;
         _photoCollection.dataSource = self;
         _photoCollection.contentInset = UIEdgeInsetsMake(0, 0, 0, 15.f);
-        [_photoCollection registerClass:[OSPGPhotoCell class] forCellWithReuseIdentifier:kPhotoCellID];
+        [_photoCollection registerClass:[OSPGPhotoCell class] forCellWithReuseIdentifier:NSStringFromClass([OSPGPhotoCell class])];
     }
     return _photoCollection;
+}
+
+- (UIImageView *)rightArrowIcon
+{
+    if (!_rightArrowIcon) {
+        _rightArrowIcon = [[UIImageView alloc] init];
+        _rightArrowIcon.image = [UIImage imageNamed:@"rightArrowIcon"];
+    }
+    return _rightArrowIcon;
 }
 
 - (void)updateWithModel:(OSPGImageResponse *)model

@@ -72,7 +72,6 @@
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.font = kBoldFont(12.f);
-        _nameLabel.numberOfLines = 1;
     }
     return _nameLabel;
 }
@@ -83,7 +82,6 @@
         _subLabel = [[UILabel alloc] init];
         _subLabel.font = kFont(10);
         _subLabel.textColor = RGBColor(128, 128, 128);
-        _subLabel.numberOfLines = 1;
     }
     return _subLabel;
 }

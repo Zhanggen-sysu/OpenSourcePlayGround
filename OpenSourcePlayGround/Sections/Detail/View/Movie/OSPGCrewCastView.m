@@ -11,7 +11,6 @@
 #import "OSPGCrew.h"
 #import "OSPGCrewCastResponse.h"
 
-static NSString *kCastSmallCellID = @"kCastSmallCellID";
 static NSInteger kCastCount = 4;
 
 @interface OSPGCrewCastView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -69,7 +68,7 @@ static NSInteger kCastCount = 4;
 #pragma mark - UICollectionViewDelegate
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    OSPGCastSmallCell *cell = (OSPGCastSmallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:kCastSmallCellID forIndexPath:indexPath];
+    OSPGCastSmallCell *cell = (OSPGCastSmallCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OSPGCastSmallCell class]) forIndexPath:indexPath];
     OSPGCast *cast = self.model.cast[indexPath.row];
     [cell updateWithModel:cast];
     return cell;
@@ -109,7 +108,7 @@ static NSInteger kCastCount = 4;
         _castCollection.delegate = self;
         _castCollection.dataSource = self;
         _castCollection.contentInset = UIEdgeInsetsMake(0, 0, 0, 15.f);
-        [_castCollection registerClass:[OSPGCastSmallCell class] forCellWithReuseIdentifier:kCastSmallCellID];
+        [_castCollection registerClass:[OSPGCastSmallCell class] forCellWithReuseIdentifier:NSStringFromClass([OSPGCastSmallCell class])];
     }
     return _castCollection;
 }
