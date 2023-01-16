@@ -274,12 +274,12 @@ static OSPGCommonHelper *_manager = nil;
     return [NSString stringWithFormat:@"%ldhrs %ldmin", runtime/60, runtime%60];
 }
 
-+ (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width
++ (CGFloat)heightWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width
 {
     NSDictionary * attriDic = @{NSFontAttributeName : font};
     CGSize size = CGSizeMake(width, CGFLOAT_MAX);
     size = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attriDic context:nil].size;
-    return CGSizeMake(size.width, ceil(size.height));
+    return ceil(size.height);
 }
 
 @end

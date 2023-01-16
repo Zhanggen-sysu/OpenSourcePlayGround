@@ -26,6 +26,9 @@
             [dict removeObjectForKey:propertyName];
             continue;
         }
+        if (![dict[propertyName] isKindOfClass:[NSString class]]) {
+            NSAssert(NO, @"property value should be NSString class");
+        }
         if (![jsonName isEqualToString:propertyName]) {
             dict[jsonName] = dict[propertyName];
             [dict removeObjectForKey:propertyName];

@@ -67,7 +67,7 @@
     if (!_reviewColletion) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(100, 150);
+        layout.itemSize = CGSizeMake(150, 150);
         
         _reviewColletion = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _reviewColletion.showsHorizontalScrollIndicator = NO;

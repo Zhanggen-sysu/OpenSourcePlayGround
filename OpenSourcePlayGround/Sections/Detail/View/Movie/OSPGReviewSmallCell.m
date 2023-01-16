@@ -116,7 +116,7 @@
     NSMutableAttributedString *ratingStr = [[NSMutableAttributedString alloc] init];
     NSTextAttachment *attach = [[NSTextAttachment alloc] init];
     attach.image = kGetImage(@"starFullIcon");
-    attach.bounds = CGRectMake(0, -5, 20.f, 20.f);
+    attach.bounds = CGRectMake(0, -3, 14.f, 14.f);
     NSDictionary *attri = @{
         NSFontAttributeName: kFont(10.f),
     };

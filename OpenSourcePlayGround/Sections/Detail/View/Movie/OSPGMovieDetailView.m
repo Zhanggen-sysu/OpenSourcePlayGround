@@ -214,11 +214,11 @@
     self.overviewLabel.text = self.detail.overview;
     
     CGFloat releaseLabelBottom =
-    [OSPGCommonHelper sizeWithText:self.titleLabel.text font:self.titleLabel.font width:self.titleLabel.width].height +
-    [OSPGCommonHelper sizeWithText:self.tagLineLabel.text font:self.tagLineLabel.font width:self.tagLineLabel.width].height +
-    [OSPGCommonHelper sizeWithText:self.ratingLabel.text font:self.ratingLabel.font width:self.ratingLabel.width].height +
-    [OSPGCommonHelper sizeWithText:self.genreLabel.text font:self.genreLabel.font width:self.genreLabel.width].height +
-    [OSPGCommonHelper sizeWithText:self.releaseDateLabel.text font:self.releaseDateLabel.font width:self.releaseDateLabel.width].height + self.releaseDateLabel.top + self.backdropImg.bottom;
+    [OSPGCommonHelper heightWithText:self.titleLabel.text font:self.titleLabel.font width:self.titleLabel.width] +
+    [OSPGCommonHelper heightWithText:self.tagLineLabel.text font:self.tagLineLabel.font width:self.tagLineLabel.width] +
+    [OSPGCommonHelper heightWithText:self.ratingLabel.text font:self.ratingLabel.font width:self.ratingLabel.width] +
+    [OSPGCommonHelper heightWithText:self.genreLabel.text font:self.genreLabel.font width:self.genreLabel.width] +
+    [OSPGCommonHelper heightWithText:self.releaseDateLabel.text font:self.releaseDateLabel.font width:self.releaseDateLabel.width] + self.releaseDateLabel.top + self.backdropImg.bottom;
     [self.overviewLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(releaseLabelBottom > CGRectGetMaxY(self.posterImg.frame) ? self.releaseDateLabel.mas_bottom : self.posterImg.mas_bottom).offset(10.f);
     }];

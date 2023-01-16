@@ -38,7 +38,6 @@
 		3DD5296E296FFB4F00414684 /* OSPGBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5296D296FFB4F00414684 /* OSPGBaseView.m */; };
 		3DD529722970101900414684 /* OSPGCastSmallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529712970101900414684 /* OSPGCastSmallCell.m */; };
 		3DD529752970119600414684 /* OSPGCrewCastResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529742970119600414684 /* OSPGCrewCastResponse.m */; };
-		3DD52978297011B600414684 /* OSPGCrewCastRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52977297011B600414684 /* OSPGCrewCastRequest.m */; };
 		3DD5297B297012BE00414684 /* OSPGCast.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5297A297012BE00414684 /* OSPGCast.m */; };
 		3DD5297E297012CC00414684 /* OSPGCrew.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5297D297012CC00414684 /* OSPGCrew.m */; };
 		3DD5298529713E5100414684 /* OSPGPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5298429713E5100414684 /* OSPGPhotoCell.m */; };
@@ -46,13 +45,13 @@
 		3DD5298B2971435C00414684 /* OSPGImageResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5298A2971435C00414684 /* OSPGImageResponse.m */; };
 		3DD5298E2971436E00414684 /* OSPGBackdrop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5298D2971436E00414684 /* OSPGBackdrop.m */; };
 		3DD529912971437A00414684 /* OSPGPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529902971437A00414684 /* OSPGPoster.m */; };
-		3DD529942971445200414684 /* OSPGImageRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529932971445200414684 /* OSPGImageRequest.m */; };
 		3DD5299F29715F9000414684 /* OSPGReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5299E29715F9000414684 /* OSPGReviewView.m */; };
-		3DD529A22971672E00414684 /* OSPGReviewRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529A12971672E00414684 /* OSPGReviewRequest.m */; };
 		3DD529A52971674300414684 /* OSPGReviewResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529A42971674300414684 /* OSPGReviewResponse.m */; };
 		3DD529A82971677A00414684 /* OSPGReviewResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529A72971677A00414684 /* OSPGReviewResult.m */; };
 		3DD529AB297167A800414684 /* OSPGReviewAuthorDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529AA297167A800414684 /* OSPGReviewAuthorDetails.m */; };
 		3DD529AE29716D8100414684 /* OSPGReviewSmallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529AD29716D8100414684 /* OSPGReviewSmallCell.m */; };
+		3DDD26A82975380C0029216C /* OSPGCopyRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD26A72975380C0029216C /* OSPGCopyRightView.m */; };
+		3DDD26AE2975401B0029216C /* OSPGSimilarMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */; };
 		3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600A29482834006B20E7 /* AppDelegate.m */; };
 		3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600D29482834006B20E7 /* SceneDelegate.m */; };
 		3DF2601429482834006B20E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601229482834006B20E7 /* Main.storyboard */; };
@@ -128,8 +127,6 @@
 		3DD529712970101900414684 /* OSPGCastSmallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCastSmallCell.m; sourceTree = "<group>"; };
 		3DD529732970119600414684 /* OSPGCrewCastResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrewCastResponse.h; sourceTree = "<group>"; };
 		3DD529742970119600414684 /* OSPGCrewCastResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrewCastResponse.m; sourceTree = "<group>"; };
-		3DD52976297011B600414684 /* OSPGCrewCastRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrewCastRequest.h; sourceTree = "<group>"; };
-		3DD52977297011B600414684 /* OSPGCrewCastRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCrewCastRequest.m; sourceTree = "<group>"; };
 		3DD52979297012BE00414684 /* OSPGCast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCast.h; sourceTree = "<group>"; };
 		3DD5297A297012BE00414684 /* OSPGCast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCast.m; sourceTree = "<group>"; };
 		3DD5297C297012CC00414684 /* OSPGCrew.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCrew.h; sourceTree = "<group>"; };
@@ -144,12 +141,8 @@
 		3DD5298D2971436E00414684 /* OSPGBackdrop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGBackdrop.m; sourceTree = "<group>"; };
 		3DD5298F2971437A00414684 /* OSPGPoster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGPoster.h; sourceTree = "<group>"; };
 		3DD529902971437A00414684 /* OSPGPoster.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGPoster.m; sourceTree = "<group>"; };
-		3DD529922971445200414684 /* OSPGImageRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGImageRequest.h; sourceTree = "<group>"; };
-		3DD529932971445200414684 /* OSPGImageRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGImageRequest.m; sourceTree = "<group>"; };
 		3DD5299D29715F9000414684 /* OSPGReviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGReviewView.h; sourceTree = "<group>"; };
 		3DD5299E29715F9000414684 /* OSPGReviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGReviewView.m; sourceTree = "<group>"; };
-		3DD529A02971672E00414684 /* OSPGReviewRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGReviewRequest.h; sourceTree = "<group>"; };
-		3DD529A12971672E00414684 /* OSPGReviewRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGReviewRequest.m; sourceTree = "<group>"; };
 		3DD529A32971674300414684 /* OSPGReviewResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGReviewResponse.h; sourceTree = "<group>"; };
 		3DD529A42971674300414684 /* OSPGReviewResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGReviewResponse.m; sourceTree = "<group>"; };
 		3DD529A62971677A00414684 /* OSPGReviewResult.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGReviewResult.h; sourceTree = "<group>"; };
@@ -158,6 +151,10 @@
 		3DD529AA297167A800414684 /* OSPGReviewAuthorDetails.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGReviewAuthorDetails.m; sourceTree = "<group>"; };
 		3DD529AC29716D8100414684 /* OSPGReviewSmallCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGReviewSmallCell.h; sourceTree = "<group>"; };
 		3DD529AD29716D8100414684 /* OSPGReviewSmallCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGReviewSmallCell.m; sourceTree = "<group>"; };
+		3DDD26A62975380C0029216C /* OSPGCopyRightView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGCopyRightView.h; sourceTree = "<group>"; };
+		3DDD26A72975380C0029216C /* OSPGCopyRightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCopyRightView.m; sourceTree = "<group>"; };
+		3DDD26AC2975401B0029216C /* OSPGSimilarMovieView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGSimilarMovieView.h; sourceTree = "<group>"; };
+		3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSimilarMovieView.m; sourceTree = "<group>"; };
 		3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSourcePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF2600929482834006B20E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DF2600A29482834006B20E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -227,6 +224,8 @@
 			children = (
 				3DD52931296C086D00414684 /* OSPGDiscoverCell.h */,
 				3DD52932296C086D00414684 /* OSPGDiscoverCell.m */,
+				3DDD26A62975380C0029216C /* OSPGCopyRightView.h */,
+				3DDD26A72975380C0029216C /* OSPGCopyRightView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,14 +520,10 @@
 				3DD5297A297012BE00414684 /* OSPGCast.m */,
 				3DD5297C297012CC00414684 /* OSPGCrew.h */,
 				3DD5297D297012CC00414684 /* OSPGCrew.m */,
-				3DD52976297011B600414684 /* OSPGCrewCastRequest.h */,
-				3DD52977297011B600414684 /* OSPGCrewCastRequest.m */,
 				3DD529732970119600414684 /* OSPGCrewCastResponse.h */,
 				3DD529742970119600414684 /* OSPGCrewCastResponse.m */,
 				3DD5294F296E633E00414684 /* OSPGGenre.h */,
 				3DD52950296E633E00414684 /* OSPGGenre.m */,
-				3DD529922971445200414684 /* OSPGImageRequest.h */,
-				3DD529932971445200414684 /* OSPGImageRequest.m */,
 				3DD529892971435C00414684 /* OSPGImageResponse.h */,
 				3DD5298A2971435C00414684 /* OSPGImageResponse.m */,
 				3DD52949296E602900414684 /* OSPGMovieDetailRequest.h */,
@@ -543,8 +538,6 @@
 				3DD52956296E636500414684 /* OSPGProductionCountry.m */,
 				3DD529A9297167A800414684 /* OSPGReviewAuthorDetails.h */,
 				3DD529AA297167A800414684 /* OSPGReviewAuthorDetails.m */,
-				3DD529A02971672E00414684 /* OSPGReviewRequest.h */,
-				3DD529A12971672E00414684 /* OSPGReviewRequest.m */,
 				3DD529A32971674300414684 /* OSPGReviewResponse.h */,
 				3DD529A42971674300414684 /* OSPGReviewResponse.m */,
 				3DD529A62971677A00414684 /* OSPGReviewResult.h */,
@@ -591,10 +584,12 @@
 				3DD5298429713E5100414684 /* OSPGPhotoCell.m */,
 				3DD5298629713E7C00414684 /* OSPGPhotoView.h */,
 				3DD5298729713E7C00414684 /* OSPGPhotoView.m */,
-				3DD5299D29715F9000414684 /* OSPGReviewView.h */,
-				3DD5299E29715F9000414684 /* OSPGReviewView.m */,
 				3DD529AC29716D8100414684 /* OSPGReviewSmallCell.h */,
 				3DD529AD29716D8100414684 /* OSPGReviewSmallCell.m */,
+				3DD5299D29715F9000414684 /* OSPGReviewView.h */,
+				3DD5299E29715F9000414684 /* OSPGReviewView.m */,
+				3DDD26AC2975401B0029216C /* OSPGSimilarMovieView.h */,
+				3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -820,18 +815,16 @@
 				3DD5297B297012BE00414684 /* OSPGCast.m in Sources */,
 				3DAE8340295988AC00466D3F /* UIView+Extension.m in Sources */,
 				3DD52927296BBEA200414684 /* OSPGDiscoverResult.m in Sources */,
+				3DDD26A82975380C0029216C /* OSPGCopyRightView.m in Sources */,
 				3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */,
 				3DD529912971437A00414684 /* OSPGPoster.m in Sources */,
 				3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */,
 				3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */,
-				3DD52978297011B600414684 /* OSPGCrewCastRequest.m in Sources */,
 				3DD5296B296FF9E800414684 /* OSPGMovieDetailView.m in Sources */,
 				3DD5294B296E602900414684 /* OSPGMovieDetailRequest.m in Sources */,
 				3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */,
 				3DD5291E296BB75B00414684 /* OSPGDiscoverResponse.m in Sources */,
 				3DC44E83294AC80500439323 /* SceneDelegate+CYLTabBar.m in Sources */,
-				3DD529A22971672E00414684 /* OSPGReviewRequest.m in Sources */,
-				3DD529942971445200414684 /* OSPGImageRequest.m in Sources */,
 				3DD529A52971674300414684 /* OSPGReviewResponse.m in Sources */,
 				3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */,
 				3DC44E9B294AFB1600439323 /* CYLPlusButtonSubclass.m in Sources */,
@@ -851,6 +844,7 @@
 				3DD5293C296D084600414684 /* OSPGCommonHelper.m in Sources */,
 				3DD52968296FF98400414684 /* OSPGCrewCastView.m in Sources */,
 				3DD5294E296E627300414684 /* OSPGMovieDetailResponse.m in Sources */,
+				3DDD26AE2975401B0029216C /* OSPGSimilarMovieView.m in Sources */,
 				3DD52957296E636500414684 /* OSPGProductionCountry.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

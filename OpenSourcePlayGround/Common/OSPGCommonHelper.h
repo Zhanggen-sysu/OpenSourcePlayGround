@@ -65,7 +65,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSURL *)getProfileUrl:(NSString *)string size:(OSPGProfileSize)size;
 + (NSAttributedString *)generateRatingString:(double)voteAverage;
 + (NSString *)getRumtimeString:(NSInteger)runtime;
-+ (CGSize)sizeWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
++ (CGFloat)heightWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
 
 @end
 

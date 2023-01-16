@@ -11,6 +11,7 @@
 #import "OSPGCrewCastView.h"
 #import "OSPGPhotoView.h"
 #import "OSPGReviewView.h"
+#import "OSPGCopyRightView.h"
 #import "OSPGMovieDetailResponse.h"
 #import "OSPGCrewCastResponse.h"
 #import "OSPGImageResponse.h"
@@ -31,7 +32,7 @@ static NSInteger kPosterHeight = 192.f;
 @property (nonatomic, strong) OSPGCrewCastView *crewcastView;
 @property (nonatomic, strong) OSPGPhotoView *photoView;
 @property (nonatomic, strong) OSPGReviewView *reviewView;
-@property (nonatomic, strong) UIView *bottomBlock;
+@property (nonatomic, strong) OSPGCopyRightView *bottomBlock;
 
 @property (nonatomic, strong) OSPGMovieDetailResponse *detailModel;
 @property (nonatomic, strong) OSPGCrewCastResponse *crewcastModel;
@@ -164,11 +165,10 @@ static NSInteger kPosterHeight = 192.f;
     return _reviewView;
 }
 
-- (UIView *)bottomBlock
+- (OSPGCopyRightView *)bottomBlock
 {
     if (!_bottomBlock) {
-        _bottomBlock = [[UIView alloc] init];
-        _bottomBlock.backgroundColor = RGBColor(240, 240, 240);
+        _bottomBlock = [[OSPGCopyRightView alloc] init];
     }
     return _bottomBlock;
 }

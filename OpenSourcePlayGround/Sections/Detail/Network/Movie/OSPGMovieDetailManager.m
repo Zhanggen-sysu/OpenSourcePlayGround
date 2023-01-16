@@ -8,16 +8,15 @@
 #import "OSPGMovieDetailManager.h"
 #import "OSPGMovieDetailResponse.h"
 #import "OSPGMovieDetailRequest.h"
-#import "OSPGCrewCastRequest.h"
 #import "OSPGCrewCastResponse.h"
-#import "OSPGImageRequest.h"
 #import "OSPGImageResponse.h"
-#import "OSPGReviewRequest.h"
 #import "OSPGReviewResponse.h"
+#import "OSPGDiscoverResponse.h"
 
 @interface OSPGMovieDetailManager ()
 
 @property (nonatomic, assign) NSInteger reviewPage;
+@property (nonatomic, assign) NSInteger similarPage;
 
 @end
 
@@ -56,22 +55,25 @@ static OSPGMovieDetailManager *_manager = nil;
 {
     OSPGMovieDetailRequest *request = [[OSPGMovieDetailRequest alloc] init];
     request.movieId = movieId;
+    request.type = OSPGMovieDetailType_Common;
     [request startRequestWithRspClass:[OSPGMovieDetailResponse class]
                         completeBlock:block];
 }
 
 - (void)getCastCrewWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block
 {
-    OSPGCrewCastRequest *request = [[OSPGCrewCastRequest alloc] init];
+    OSPGMovieDetailRequest *request = [[OSPGMovieDetailRequest alloc] init];
     request.movieId = movieId;
+    request.type = OSPGMovieDetailType_CrewCast;
     [request startRequestWithRspClass:[OSPGCrewCastResponse class]
                         completeBlock:block];
 }
 
 - (void)getImagesWithId:(NSInteger)movieId completionBlock:(OSPGCommonResponseBlock)block
 {
-    OSPGImageRequest *requst = [[OSPGImageRequest alloc] init];
+    OSPGMovieDetailRequest *requst = [[OSPGMovieDetailRequest alloc] init];
     requst.movieId = movieId;
+    requst.type = OSPGMovieDetailType_Image;
     [requst startRequestWithRspClass:[OSPGImageResponse class] completeBlock:block];
 }
 
@@ -79,10 +81,21 @@ static OSPGMovieDetailManager *_manager = nil;
 - (void)getReviewsWithId:(NSInteger)movieId loadMore:(BOOL)loadMore completionBlock:(OSPGCommonResponseBlock)block
 {
     self.reviewPage = loadMore ? ++self.reviewPage : 1;
-    OSPGReviewRequest *request = [[OSPGReviewRequest alloc] init];
+    OSPGMovieDetailRequest *request = [[OSPGMovieDetailRequest alloc] init];
     request.movieId = movieId;
-    request.page = self.reviewPage;
+    request.type = OSPGMovieDetailType_Review;
+    request.page = [NSString stringWithFormat:@"%ld", self.reviewPage];;
     [request startRequestWithRspClass:[OSPGReviewResponse class] completeBlock:block];
+}
+
+- (void)getSimilarWithId:(NSInteger)movieId loadMore:(BOOL)loadMore completionBlock:(OSPGCommonResponseBlock)block
+{
+    self.similarPage = loadMore ? ++self.similarPage : 1;
+    OSPGMovieDetailRequest *request = [[OSPGMovieDetailRequest alloc] init];
+    request.movieId = movieId;
+    request.type = OSPGMovieDetailType_Similar;
+    request.page = [NSString stringWithFormat:@"%ld", self.similarPage];
+    [request startRequestWithRspClass:[OSPGDiscoverResponse class] completeBlock:block];
 }
 
 @end
