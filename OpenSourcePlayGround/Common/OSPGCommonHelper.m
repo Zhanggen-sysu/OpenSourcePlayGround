@@ -243,12 +243,12 @@ static OSPGCommonHelper *_manager = nil;
         NSTextAttachment *attach = [[NSTextAttachment alloc] init];
         if (voteAverage >= 2) {
             voteAverage -= 2;
-            attach.image = [UIImage imageNamed:@"starFullIcon"];
+            attach.image = kGetImage(@"starFullIcon");
         } else if (voteAverage >= 1) {
             voteAverage -= 1;
-            attach.image = [UIImage imageNamed:@"starHalfIcon"];
+            attach.image = kGetImage(@"starHalfIcon");
         } else {
-            attach.image = [UIImage imageNamed:@"starEmptyIcon"];
+            attach.image = kGetImage(@"starEmptyIcon");
         }
         attach.bounds = CGRectMake(0, -5, 20.f, 20.f);
         [attStr appendAttributedString:[NSAttributedString attributedStringWithAttachment:attach]];

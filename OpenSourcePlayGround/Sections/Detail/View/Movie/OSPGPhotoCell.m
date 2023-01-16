@@ -7,6 +7,7 @@
 
 #import "OSPGPhotoCell.h"
 #import "Masonry.h"
+#import "Macros.h"
 #import "UIImageView+WebCache.h"
 
 @interface OSPGPhotoCell ()
@@ -49,7 +50,7 @@
 
 - (void)updateWithUrl:(NSURL *)url
 {
-    [self.imageView sd_setImageWithURL:url placeholderImage:[UIImage imageNamed:@"backdropDefault"]];
+    [self.imageView sd_setImageWithURL:url placeholderImage:kGetImage(@"backdropDefault")];
 }
 
 @end

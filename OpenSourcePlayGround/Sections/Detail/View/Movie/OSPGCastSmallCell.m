@@ -99,7 +99,7 @@
         return;
     }
     self.model = model;
-    [self.avatarImg sd_setImageWithURL:[OSPGCommonHelper getProfileUrl:model.profilePath size:OSPGProfileSize_w185]  placeholderImage:[UIImage imageNamed:@"profileDefault"]];
+    [self.avatarImg sd_setImageWithURL:[OSPGCommonHelper getProfileUrl:model.profilePath size:OSPGProfileSize_w185]  placeholderImage:kGetImage(@"profileDefault")];
     self.nameLabel.text = model.name;
     self.characterLabel.text = model.character;
 }

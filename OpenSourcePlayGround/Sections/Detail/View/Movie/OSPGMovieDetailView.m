@@ -187,8 +187,8 @@
         return;
     }
     self.detail = response;
-    [self.backdropImg sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:self.detail.backdropPath size:OSPGBackdropSize_w780] placeholderImage:[UIImage imageNamed:@"backdropDefault"]];
-    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:self.detail.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
+    [self.backdropImg sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:self.detail.backdropPath size:OSPGBackdropSize_w780] placeholderImage:kGetImage(@"backdropDefault")];
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:self.detail.posterPath size:OSPGPosterSize_w342] placeholderImage:kGetImage(@"posterDefault")];
     self.titleLabel.text = self.detail.title;
     if (self.detail.tagline.length > 0) {
         self.tagLineLabel.text = self.detail.tagline;

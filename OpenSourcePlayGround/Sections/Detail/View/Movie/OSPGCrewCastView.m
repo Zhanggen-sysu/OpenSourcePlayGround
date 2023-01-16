@@ -139,7 +139,7 @@ static NSInteger kCastCount = 4;
 {
     if (!_rightIcon) {
         _rightIcon = [[UIImageView alloc] init];
-        _rightIcon.image = [UIImage imageNamed:@"rightArrowIcon"];
+        _rightIcon.image = kGetImage(@"rightArrowIcon");
     }
     return _rightIcon;
 }

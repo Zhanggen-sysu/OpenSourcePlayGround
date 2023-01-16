@@ -8,12 +8,17 @@
 #import "OSPGReviewSmallCell.h"
 #import "Masonry.h"
 #import "Macros.h"
+#import "OSPGReviewResult.h"
+#import "OSPGReviewAuthorDetails.h"
 
 @interface OSPGReviewSmallCell ()
+
+@property (nonatomic, strong) OSPGReviewResult *model;
 
 @property (nonatomic, strong) UILabel *ratingLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *reviewLabel;
+@property (nonatomic, strong) UIButton *seeAllBtn;
 @property (nonatomic, strong) UIView *backView;
 
 @end
@@ -46,16 +51,28 @@
     }];
     
     [self.ratingLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.top.left.equalTo(self.backView).offset(10.f);
+        make.right.equalTo(self.backView).offset(-10.f);
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.left.right.equalTo(self.ratingLabel);
+        make.top.equalTo(self.ratingLabel.mas_bottom).offset(5.f);
     }];
     
     [self.reviewLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        
+        make.left.right.equalTo(self.ratingLabel);
+        make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
+        make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
     }];
+}
+
+- (UILabel *)ratingLabel
+{
+    if (!_ratingLabel) {
+        _ratingLabel = [[UILabel alloc] init];
+    }
+    return _ratingLabel;
 }
 
 - (UIView *)backView
@@ -72,7 +89,8 @@
 {
     if (!_nameLabel) {
         _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = kFont(14.f);
+        _nameLabel.font = kFont(10.f);
+        _nameLabel.numberOfLines = 2;
     }
     return _nameLabel;
 }
@@ -81,7 +99,7 @@
 {
     if (!_reviewLabel) {
         _reviewLabel = [[UILabel alloc] init];
-        _reviewLabel.font = kFont(12.f);
+        _reviewLabel.font = kFont(10.f);
         _reviewLabel.textColor = RGBColor(128.f, 128.f, 128.f);
         _reviewLabel.numberOfLines = 0;
     }
@@ -91,7 +109,43 @@
 #pragma mark - data
 - (void)updateWithModel:(OSPGReviewResult *)model
 {
+    if (model.identifier == self.model.identifier) {
+        return;
+    }
+    self.model = model;
+    NSMutableAttributedString *ratingStr = [[NSMutableAttributedString alloc] init];
+    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+    attach.image = kGetImage(@"starFullIcon");
+    attach.bounds = CGRectMake(0, -5, 20.f, 20.f);
+    NSDictionary *attri = @{
+        NSFontAttributeName: kFont(10.f),
+    };
+    [ratingStr appendAttributedString:[NSAttributedString attributedStringWithAttachment:attach]];
+    [ratingStr appendAttributedString:[[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@/10", model.authorDetails.rating ?: @""] attributes:attri]];
     
+    self.ratingLabel.attributedText = ratingStr;
+    if (model.authorDetails.name.length <= 0) {
+        [self.nameLabel removeFromSuperview];
+        [self.reviewLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.ratingLabel.mas_bottom).offset(5.f);
+        }];
+        
+    } else if (!self.nameLabel.superview){
+        [self.backView addSubview:self.nameLabel];
+        [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self.ratingLabel);
+            make.top.equalTo(self.ratingLabel.mas_bottom).offset(5.f);
+        }];
+        [self.reviewLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.right.equalTo(self.ratingLabel);
+            make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
+            make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
+        }];
+        self.nameLabel.text = model.authorDetails.name;
+    } else {
+        self.nameLabel.text = model.authorDetails.name;
+    }
+    self.reviewLabel.text = model.content;
 }
 
 @end

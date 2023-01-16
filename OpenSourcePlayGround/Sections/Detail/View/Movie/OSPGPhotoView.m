@@ -97,7 +97,7 @@
 {
     if (!_rightArrowIcon) {
         _rightArrowIcon = [[UIImageView alloc] init];
-        _rightArrowIcon.image = [UIImage imageNamed:@"rightArrowIcon"];
+        _rightArrowIcon.image = kGetImage(@"rightArrowIcon");
     }
     return _rightArrowIcon;
 }
