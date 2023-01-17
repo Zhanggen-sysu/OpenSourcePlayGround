@@ -52,6 +52,7 @@
 		3DD529AE29716D8100414684 /* OSPGReviewSmallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD529AD29716D8100414684 /* OSPGReviewSmallCell.m */; };
 		3DDD26A82975380C0029216C /* OSPGCopyRightView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD26A72975380C0029216C /* OSPGCopyRightView.m */; };
 		3DDD26AE2975401B0029216C /* OSPGSimilarMovieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */; };
+		3DDD26B429763B090029216C /* OSPGSimilarMovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDD26B329763B090029216C /* OSPGSimilarMovieCell.m */; };
 		3DF2600B29482834006B20E7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600A29482834006B20E7 /* AppDelegate.m */; };
 		3DF2600E29482834006B20E7 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DF2600D29482834006B20E7 /* SceneDelegate.m */; };
 		3DF2601429482834006B20E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DF2601229482834006B20E7 /* Main.storyboard */; };
@@ -155,6 +156,8 @@
 		3DDD26A72975380C0029216C /* OSPGCopyRightView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGCopyRightView.m; sourceTree = "<group>"; };
 		3DDD26AC2975401B0029216C /* OSPGSimilarMovieView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGSimilarMovieView.h; sourceTree = "<group>"; };
 		3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSimilarMovieView.m; sourceTree = "<group>"; };
+		3DDD26B229763B090029216C /* OSPGSimilarMovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGSimilarMovieCell.h; sourceTree = "<group>"; };
+		3DDD26B329763B090029216C /* OSPGSimilarMovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSimilarMovieCell.m; sourceTree = "<group>"; };
 		3DF2600629482834006B20E7 /* OpenSourcePlayGround.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSourcePlayGround.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DF2600929482834006B20E7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DF2600A29482834006B20E7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -458,6 +461,7 @@
 		3DD52941296E544500414684 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD26B629764BC90029216C /* Credits */,
 				3DD5299829715C5F00414684 /* TV */,
 				3DD5299729715C5800414684 /* Movie */,
 			);
@@ -467,6 +471,7 @@
 		3DD52942296E544C00414684 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD26B829764BD60029216C /* Credits */,
 				3DD5299C29715C7D00414684 /* TV */,
 				3DD5299B29715C7700414684 /* Movie */,
 			);
@@ -476,6 +481,7 @@
 		3DD52943296E546500414684 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD26B729764BD10029216C /* Credits */,
 				3DD5299A29715C6E00414684 /* TV */,
 				3DD5299929715C6700414684 /* Movie */,
 			);
@@ -485,6 +491,7 @@
 		3DD52944296E546A00414684 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				3DDD26B529764BA80029216C /* Credits */,
 				3DD5299629715C4400414684 /* TV */,
 				3DD5299529715C3C00414684 /* Movie */,
 			);
@@ -588,6 +595,8 @@
 				3DD529AD29716D8100414684 /* OSPGReviewSmallCell.m */,
 				3DD5299D29715F9000414684 /* OSPGReviewView.h */,
 				3DD5299E29715F9000414684 /* OSPGReviewView.m */,
+				3DDD26B229763B090029216C /* OSPGSimilarMovieCell.h */,
+				3DDD26B329763B090029216C /* OSPGSimilarMovieCell.m */,
 				3DDD26AC2975401B0029216C /* OSPGSimilarMovieView.h */,
 				3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */,
 			);
@@ -615,6 +624,34 @@
 			children = (
 			);
 			path = TV;
+			sourceTree = "<group>";
+		};
+		3DDD26B529764BA80029216C /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		3DDD26B629764BC90029216C /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		3DDD26B729764BD10029216C /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Credits;
+			sourceTree = "<group>";
+		};
+		3DDD26B829764BD60029216C /* Credits */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Credits;
 			sourceTree = "<group>";
 		};
 		3DF25FFD29482834006B20E7 = {
@@ -819,6 +856,7 @@
 				3DC44E80294AC38500439323 /* YPNavigationController+Configure.m in Sources */,
 				3DD529912971437A00414684 /* OSPGPoster.m in Sources */,
 				3DC44E8C294ACD3C00439323 /* OSPGLearnViewController.m in Sources */,
+				3DDD26B429763B090029216C /* OSPGSimilarMovieCell.m in Sources */,
 				3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */,
 				3DD5296B296FF9E800414684 /* OSPGMovieDetailView.m in Sources */,
 				3DD5294B296E602900414684 /* OSPGMovieDetailRequest.m in Sources */,

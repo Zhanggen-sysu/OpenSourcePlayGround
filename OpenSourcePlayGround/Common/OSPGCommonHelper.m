@@ -282,4 +282,12 @@ static OSPGCommonHelper *_manager = nil;
     return ceil(size.height);
 }
 
++ (CGFloat)widthWithText:(NSString *)text font:(UIFont *)font height:(CGFloat)height
+{
+    NSDictionary * attriDic = @{NSFontAttributeName : font};
+    CGSize size = CGSizeMake(CGFLOAT_MAX, height);
+    size = [text boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:attriDic context:nil].size;
+    return ceil(size.width);
+}
+
 @end

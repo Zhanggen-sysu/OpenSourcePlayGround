@@ -1,0 +1,19 @@
+//
+//  OSPGSimilarMovieCell.h
+//  OpenSourcePlayGround
+//
+//  Created by GenZhang on 2023/1/17.
+//
+
+#import <UIKit/UIKit.h>
+
+@class OSPGDiscoverResult;
+NS_ASSUME_NONNULL_BEGIN
+
+@interface OSPGSimilarMovieCell : UICollectionViewCell
+
+- (void)updateWithModel:(OSPGDiscoverResult *)model;
+
+@end
+
+NS_ASSUME_NONNULL_END

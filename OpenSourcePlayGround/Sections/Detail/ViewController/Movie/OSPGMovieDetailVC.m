@@ -12,10 +12,12 @@
 #import "OSPGPhotoView.h"
 #import "OSPGReviewView.h"
 #import "OSPGCopyRightView.h"
+#import "OSPGSimilarMovieView.h"
 #import "OSPGMovieDetailResponse.h"
 #import "OSPGCrewCastResponse.h"
 #import "OSPGImageResponse.h"
 #import "OSPGReviewResponse.h"
+#import "OSPGDiscoverResponse.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 #import "YPNavigationController+Configure.h"
 
@@ -32,12 +34,14 @@ static NSInteger kPosterHeight = 192.f;
 @property (nonatomic, strong) OSPGCrewCastView *crewcastView;
 @property (nonatomic, strong) OSPGPhotoView *photoView;
 @property (nonatomic, strong) OSPGReviewView *reviewView;
+@property (nonatomic, strong) OSPGSimilarMovieView *similarView;
 @property (nonatomic, strong) OSPGCopyRightView *bottomBlock;
 
 @property (nonatomic, strong) OSPGMovieDetailResponse *detailModel;
 @property (nonatomic, strong) OSPGCrewCastResponse *crewcastModel;
 @property (nonatomic, strong) OSPGImageResponse *imagesModel;
 @property (nonatomic, strong) OSPGReviewResponse *reviewModel;
+@property (nonatomic, strong) OSPGDiscoverResponse *similarModel;
 
 @end
 
@@ -72,6 +76,7 @@ static NSInteger kPosterHeight = 192.f;
     [self.contentView addSubview:self.crewcastView];
     [self.contentView addSubview:self.photoView];
     [self.contentView addSubview:self.reviewView];
+    [self.contentView addSubview:self.similarView];
     [self.contentView addSubview:self.bottomBlock];
 }
 
@@ -99,11 +104,15 @@ static NSInteger kPosterHeight = 192.f;
         make.top.equalTo(self.photoView.mas_bottom).offset(15.f);
         make.leading.trailing.equalTo(self.contentView);
     }];
+    [self.similarView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.reviewView.mas_bottom).offset(15.f);
+        make.leading.trailing.equalTo(self.contentView);
+    }];
     [self.bottomBlock mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.mas_equalTo(50.f);
         make.bottom.equalTo(self.contentView);
         make.leading.trailing.equalTo(self.contentView);
-        make.top.equalTo(self.reviewView.mas_bottom);
+        make.top.equalTo(self.similarView.mas_bottom);
     }];
 }
 
@@ -163,6 +172,14 @@ static NSInteger kPosterHeight = 192.f;
         _reviewView = [[OSPGReviewView alloc] init];
     }
     return _reviewView;
+}
+
+- (OSPGSimilarMovieView *)similarView
+{
+    if (!_similarView) {
+        _similarView = [[OSPGSimilarMovieView alloc] init];
+    }
+    return _similarView;
 }
 
 - (OSPGCopyRightView *)bottomBlock
@@ -258,8 +275,8 @@ static NSInteger kPosterHeight = 192.f;
             self.reviewModel = (OSPGReviewResponse *)rsp;
             if (self.reviewModel.results.count <= 0) {
                 [self.reviewView removeFromSuperview];
-                [self.bottomBlock mas_updateConstraints:^(MASConstraintMaker *make) {
-                    make.top.equalTo(self.photoView.mas_bottom);
+                [self.similarView mas_updateConstraints:^(MASConstraintMaker *make) {
+                    make.top.equalTo(self.photoView.mas_bottom).offset(15.f);
                 }];
             } else if (!self.reviewView.superview) {
                 [self.contentView addSubview:self.reviewView];
@@ -267,16 +284,23 @@ static NSInteger kPosterHeight = 192.f;
                     make.top.equalTo(self.photoView.mas_bottom).offset(15.f);
                     make.leading.trailing.equalTo(self.contentView);
                 }];
-                [self.bottomBlock mas_remakeConstraints:^(MASConstraintMaker *make) {
-                    make.height.mas_equalTo(50.f);
-                    make.bottom.equalTo(self.contentView);
+                [self.similarView mas_remakeConstraints:^(MASConstraintMaker *make) {
+                    make.top.equalTo(self.reviewView.mas_bottom).offset(15.f);
                     make.leading.trailing.equalTo(self.contentView);
-                    make.top.equalTo(self.reviewView.mas_bottom);
                 }];
                 [self.reviewView updateWithModel:self.reviewModel];
             } else {
                 [self.reviewView updateWithModel:self.reviewModel];
             }
+        } else {
+            [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
+        }
+    }];
+    
+    [[OSPGMovieDetailManager sharedManager] getSimilarWithId:self.movieId loadMore:NO completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        if (isSuccess) {
+            self.similarModel = (OSPGDiscoverResponse *)rsp;
+            [self.similarView updateWithModel:self.similarModel];
         } else {
             [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
         }

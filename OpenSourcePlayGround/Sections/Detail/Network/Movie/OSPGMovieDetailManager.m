@@ -35,18 +35,18 @@ static OSPGMovieDetailManager *_manager = nil;
     return _manager;
 }
 
-+ (id)allocWithZone:(struct _NSZone *)zone {
-   
++ (id)allocWithZone:(struct _NSZone *)zone
+{
    return [OSPGMovieDetailManager sharedManager];
 }
 
-- (id)copyWithZone:(NSZone *)zone {
-   
+- (id)copyWithZone:(NSZone *)zone
+{
    return [OSPGMovieDetailManager sharedManager];
 }
 
-- (id)mutableCopyWithZone:(NSZone *)zone {
-   
+- (id)mutableCopyWithZone:(NSZone *)zone
+{
    return [OSPGMovieDetailManager sharedManager];
 }
 

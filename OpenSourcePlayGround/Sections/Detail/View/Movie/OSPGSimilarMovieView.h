@@ -7,9 +7,12 @@
 
 #import "OSPGBaseView.h"
 
+@class OSPGDiscoverResponse;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OSPGSimilarMovieView : OSPGBaseView
+
+- (void)updateWithModel:(OSPGDiscoverResponse *)model;
 
 @end
 

@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSAttributedString *)generateRatingString:(double)voteAverage;
 + (NSString *)getRumtimeString:(NSInteger)runtime;
 + (CGFloat)heightWithText:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
-
++ (CGFloat)widthWithText:(NSString *)text font:(UIFont *)font height:(CGFloat)height;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,6 +11,7 @@
 #import "OSPGBackdrop.h"
 #import "OSPGCommonHelper.h"
 
+static CGFloat kItemCount = 1.5;
 @interface OSPGPhotoView () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) OSPGImageResponse *model;
@@ -42,7 +43,7 @@
         make.top.equalTo(self.titleLabel.mas_bottom).offset(10.f);
         make.leading.equalTo(self).offset(15.f);
         make.trailing.equalTo(self);
-        make.height.mas_equalTo(110.f);
+        make.height.mas_equalTo([self itemSize].height);
         make.bottom.equalTo(self).offset(-10.f);
     }];
     [self.rightArrowIcon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -81,7 +82,7 @@
     if (!_photoCollection) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.itemSize = CGSizeMake(225, 128);
+        layout.itemSize = [self itemSize];
         
         _photoCollection = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _photoCollection.showsHorizontalScrollIndicator = NO;
@@ -111,5 +112,10 @@
     [self.photoCollection reloadData];
 }
 
-
+- (CGSize)itemSize
+{
+    CGFloat width = (SCREEN_WIDTH - (kItemCount - 1) * 10.f) / kItemCount;
+    CGFloat height = width * 0.563;
+    return CGSizeMake(width, height);
+}
 @end
