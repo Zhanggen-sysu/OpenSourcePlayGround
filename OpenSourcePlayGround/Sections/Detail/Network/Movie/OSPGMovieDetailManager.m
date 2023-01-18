@@ -11,7 +11,7 @@
 #import "OSPGCrewCastResponse.h"
 #import "OSPGImageResponse.h"
 #import "OSPGReviewResponse.h"
-#import "OSPGDiscoverResponse.h"
+#import "OSPGMovieDiscoverResponse.h"
 
 @interface OSPGMovieDetailManager ()
 
@@ -95,7 +95,7 @@ static OSPGMovieDetailManager *_manager = nil;
     request.movieId = movieId;
     request.type = OSPGMovieDetailType_Similar;
     request.page = [NSString stringWithFormat:@"%ld", self.similarPage];
-    [request startRequestWithRspClass:[OSPGDiscoverResponse class] completeBlock:block];
+    [request startRequestWithRspClass:[OSPGMovieDiscoverResponse class] completeBlock:block];
 }
 
 @end

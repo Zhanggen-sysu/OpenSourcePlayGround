@@ -67,6 +67,8 @@ PODS:
   - MMKVCore (1.2.14)
   - MyLayout (1.9.8)
   - pop (1.0.12)
+  - SDCycleScrollView (1.82):
+    - SDWebImage (>= 5.0.0)
   - SDWebImage (5.14.2):
     - SDWebImage/Core (= 5.14.2)
   - SDWebImage/Core (5.14.2)
@@ -108,6 +110,7 @@ DEPENDENCIES:
   - MMKV
   - MyLayout
   - pop
+  - SDCycleScrollView (>= 1.82)
   - SDWebImage
   - "UITableView+FDTemplateLayoutCell"
   - YPNavigationBarTransition
@@ -134,6 +137,7 @@ SPEC REPOS:
     - MMKVCore
     - MyLayout
     - pop
+    - SDCycleScrollView
     - SDWebImage
     - SocketRocket
     - "UITableView+FDTemplateLayoutCell"
@@ -163,6 +167,7 @@ SPEC CHECKSUMS:
   MMKVCore: 89f5c8a66bba2dcd551779dea4d412eeec8ff5bb
   MyLayout: 6ca47dbf27648aa011496094cfe1162217e3c912
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  SDCycleScrollView: a0d74c3384caa72bdfc81470bdbc8c14b3e1fbcf
   SDWebImage: b9a731e1d6307f44ca703b3976d18c24ca561e84
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
@@ -173,6 +178,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: 2e815f2b5ba7ff49aa298ea265dec6a7aa4664ad
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 50ac0ce879ec2c3119a77455c33c8b11214e6b75
+PODFILE CHECKSUM: 167573a592fa24e91f677239057affe444784a58
 
 COCOAPODS: 1.11.3

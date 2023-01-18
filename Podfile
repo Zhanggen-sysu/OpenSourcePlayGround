@@ -30,6 +30,7 @@ target 'OpenSourcePlayGround' do
   pod 'pop'
   pod 'IQKeyboardManager'
   pod 'SDWebImage'
+  pod 'SDCycleScrollView','>= 1.82'
   pod 'UITableView+FDTemplateLayoutCell'
   pod 'YPNavigationBarTransition'
   pod 'YTKNetwork'

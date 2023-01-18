@@ -1,13 +1,13 @@
 //
-//  OSPGDiscoverResult.m
+//  OSPGMovieResult.m
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/9.
 //
 
-#import "OSPGDiscoverResult.h"
+#import "OSPGMovieResult.h"
 
-@implementation OSPGDiscoverResult
+@implementation OSPGMovieResult
 
 + (NSDictionary<NSString *, NSString *> *)properties
 {

@@ -7,8 +7,8 @@
 
 #import "OSPGSimilarMovieView.h"
 #import "OSPGSimilarMovieCell.h"
-#import "OSPGDiscoverResult.h"
-#import "OSPGDiscoverResponse.h"
+#import "OSPGMovieResult.h"
+#import "OSPGMovieDiscoverResponse.h"
 
 static NSInteger kItemCount = 3;
 @interface OSPGSimilarMovieView () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -18,7 +18,7 @@ static NSInteger kItemCount = 3;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIImageView *rightIcon;
 
-@property (nonatomic, strong) OSPGDiscoverResponse *model;
+@property (nonatomic, strong) OSPGMovieDiscoverResponse *model;
 
 @end
 
@@ -108,7 +108,7 @@ static NSInteger kItemCount = 3;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     OSPGSimilarMovieCell *cell = (OSPGSimilarMovieCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OSPGSimilarMovieCell class]) forIndexPath:indexPath];
-    OSPGDiscoverResult *result = self.model.results[indexPath.row];
+    OSPGMovieResult *result = self.model.results[indexPath.row];
     [cell updateWithModel:result];
     return cell;
 }
@@ -119,7 +119,7 @@ static NSInteger kItemCount = 3;
 }
 
 #pragma mark - Data
-- (void)updateWithModel:(OSPGDiscoverResponse *)model
+- (void)updateWithModel:(OSPGMovieDiscoverResponse *)model
 {
     self.model = model;
     [self.collectionView reloadData];

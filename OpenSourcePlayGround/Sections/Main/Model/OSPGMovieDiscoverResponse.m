@@ -1,14 +1,14 @@
 //
-//  OSPGDiscoverResponse.m
+//  OSPGMovieDiscoverResponse.m
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/9.
 //
 
-#import "OSPGDiscoverResponse.h"
-#import "OSPGDiscoverResult.h"
+#import "OSPGMovieDiscoverResponse.h"
+#import "OSPGMovieResult.h"
 
-@implementation OSPGDiscoverResponse
+@implementation OSPGMovieDiscoverResponse
 
 + (NSDictionary<NSString *, NSString *> *)properties
 {
@@ -16,14 +16,15 @@
     return properties = properties ? properties : @{
         @"page": @"page",
         @"results": @"results",
-        @"total_results": @"totalResults",
+        @"dates": @"dates",
         @"total_pages": @"totalPages",
+        @"total_results": @"totalResults",
     };
 }
 
 + (nullable NSDictionary<NSString *, id> *)modelContainerPropertyGenericClass
 {
-    return @{@"results" : [OSPGDiscoverResult class]};
+    return @{@"results" : [OSPGMovieResult class]};
 }
 
 @end

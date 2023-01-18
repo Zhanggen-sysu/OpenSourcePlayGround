@@ -6,7 +6,7 @@
 //
 
 #import "OSPGSimilarMovieCell.h"
-#import "OSPGDiscoverResult.h"
+#import "OSPGMovieResult.h"
 #import "OSPGCommonHelper.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+YYAdd.h"
@@ -15,7 +15,7 @@
 
 @interface OSPGSimilarMovieCell ()
 
-@property (nonatomic, strong) OSPGDiscoverResult *model;
+@property (nonatomic, strong) OSPGMovieResult *model;
 @property (nonatomic, strong) UIImageView *posterImg;
 @property (nonatomic, strong) UILabel *nameLabel;
 @property (nonatomic, strong) UILabel *rateLabel;
@@ -85,7 +85,7 @@
 }
 
 #pragma mark - Data
-- (void)updateWithModel:(OSPGDiscoverResult *)model
+- (void)updateWithModel:(OSPGMovieResult *)model
 {
     if (self.model.identifier == model.identifier) {
         return;

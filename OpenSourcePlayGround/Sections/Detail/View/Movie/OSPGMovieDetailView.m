@@ -48,7 +48,7 @@
 {
     [self.backdropImg mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.leading.trailing.equalTo(self);
-        make.height.mas_equalTo(440 / 780.f * SCREEN_WIDTH);
+        make.height.mas_equalTo(0.563 * SCREEN_WIDTH);
     }];
     [self.detailContent mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.backdropImg.mas_bottom);

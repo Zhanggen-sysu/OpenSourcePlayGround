@@ -51,17 +51,17 @@
     }];
     
     [self.ratingLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(self.backView).offset(10.f);
-        make.right.equalTo(self.backView).offset(-10.f);
+        make.top.leading.equalTo(self.backView).offset(10.f);
+        make.trailing.equalTo(self.backView).offset(-10.f);
     }];
     
     [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.ratingLabel);
+        make.leading.trailing.equalTo(self.ratingLabel);
         make.top.equalTo(self.ratingLabel.mas_bottom).offset(5.f);
     }];
     
     [self.reviewLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.ratingLabel);
+        make.leading.trailing.equalTo(self.ratingLabel);
         make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
         make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
     }];
@@ -133,11 +133,11 @@
     } else if (!self.nameLabel.superview){
         [self.backView addSubview:self.nameLabel];
         [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.ratingLabel);
+            make.leading.trailing.equalTo(self.ratingLabel);
             make.top.equalTo(self.ratingLabel.mas_bottom).offset(5.f);
         }];
         [self.reviewLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.ratingLabel);
+            make.leading.trailing.equalTo(self.ratingLabel);
             make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
             make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
         }];

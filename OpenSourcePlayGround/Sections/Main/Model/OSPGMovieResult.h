@@ -1,5 +1,5 @@
 //
-//  OSPGDiscoverResult.h
+//  OSPGMovieResult.h
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/9.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OSPGDiscoverResult : OSPGBaseModel
+@interface OSPGMovieResult : OSPGBaseModel
 
 @property (nonatomic, nullable, copy) NSString *posterPath;
 @property (nonatomic, assign)         BOOL isAdult;

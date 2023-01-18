@@ -7,12 +7,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class OSPGDiscoverResult;
+@class OSPGMovieResult;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OSPGDiscoverCell : UICollectionViewCell
 
-- (void)updateWithModel:(OSPGDiscoverResult *)result;
+- (void)updateWithModel:(OSPGMovieResult *)result;
 
 @end
 

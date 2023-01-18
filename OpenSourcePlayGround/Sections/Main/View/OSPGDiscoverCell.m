@@ -6,7 +6,7 @@
 //
 
 #import "OSPGDiscoverCell.h"
-#import "OSPGDiscoverResult.h"
+#import "OSPGMovieResult.h"
 #import "Macros.h"
 #import "OSPGCommonHelper.h"
 #import "Masonry.h"
@@ -15,10 +15,9 @@
 
 @interface OSPGDiscoverCell ()
 
-@property (nonatomic, strong) OSPGDiscoverResult *model;
+@property (nonatomic, strong) OSPGMovieResult *model;
 @property (nonatomic, strong) UIImageView *posterImg;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *subLabel;
+@property (nonatomic, strong) UIButton *rateLabel;
 
 @end
 
@@ -38,8 +37,7 @@
 - (void)setupSubviews
 {
     [self.contentView addSubview:self.posterImg];
-    [self.contentView addSubview:self.nameLabel];
-    [self.contentView addSubview:self.subLabel];
+    [self.contentView addSubview:self.rateLabel];
 }
 
 - (void)defineLayout
@@ -48,13 +46,8 @@
         make.top.leading.trailing.equalTo(self.contentView);
         make.height.mas_equalTo(self.contentView.width * 1.5);
     }];
-    [self.nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.posterImg.mas_bottom).offset(10.f);
-        make.leading.trailing.equalTo(self.contentView);
-    }];
-    [self.subLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.nameLabel.mas_bottom).offset(5.f);
-        make.leading.trailing.equalTo(self.contentView);
+    [self.rateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.leading.equalTo(self.contentView).offset(10.f);
     }];
 }
 
@@ -67,38 +60,29 @@
     return _posterImg;
 }
 
-- (UILabel *)nameLabel
+- (UIButton *)rateLabel
 {
-    if (!_nameLabel) {
-        _nameLabel = [[UILabel alloc] init];
-        _nameLabel.font = kBoldFont(12.f);
+    if (!_rateLabel) {
+        _rateLabel = [[UIButton alloc] init];
+        _rateLabel.backgroundColor = RGBAColor(0, 0, 0, 0.5);
+        ViewBorderRadius(_rateLabel, 5.0f, 0, [UIColor blackColor]);
+        [_rateLabel setImage:[kGetImage(@"starFullIcon") sd_resizedImageWithSize:CGSizeMake(14.f, 14.f) scaleMode:SDImageScaleModeAspectFill] forState:UIControlStateNormal];
+        _rateLabel.titleLabel.font = kFont(12.f);
+        _rateLabel.titleEdgeInsets = UIEdgeInsetsMake(0, 3, 0, -3);
+        _rateLabel.contentEdgeInsets = UIEdgeInsetsMake(2, 5, 2, 8);
     }
-    return _nameLabel;
-}
-
-- (UILabel *)subLabel
-{
-    if (!_subLabel) {
-        _subLabel = [[UILabel alloc] init];
-        _subLabel.font = kFont(10);
-        _subLabel.textColor = RGBColor(128, 128, 128);
-    }
-    return _subLabel;
+    return _rateLabel;
 }
 
 #pragma mark - Data
-- (void)updateWithModel:(OSPGDiscoverResult *)result
+- (void)updateWithModel:(OSPGMovieResult *)result
 {
     if (result.identifier == self.model.identifier) {
         return;
     }
     self.model = result;
-    self.nameLabel.text = result.title;
-    NSString *releaseDate = [[OSPGCommonHelper sharedManager] dateFormateConvertString:result.releaseDate
-                                                                           fromFormate:OSPGDateFormate_yyyyMMdd
-                                                                             toFormate:OSPGDateFormate_MMMdyyyy];
-    self.subLabel.text = [NSString stringWithFormat:@"%@ - %@", releaseDate, result.originalLanguage];
     [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
+    [self.rateLabel setTitle:[NSString stringWithFormat:@"%.1f", result.voteAverage] forState:UIControlStateNormal];
 }
 
 @end

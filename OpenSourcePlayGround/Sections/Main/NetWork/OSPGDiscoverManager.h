@@ -6,6 +6,7 @@
 //
 #import <Foundation/Foundation.h>
 #import "OSPGDiscoverRequest.h"
+#import "OSPGMovieDiscoverRequest.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,7 +32,7 @@ typedef NS_ENUM(NSInteger, OSPGDiscoverSortBy) {
 
 + (instancetype)sharedManager;
 - (void)getDiscoverDefault:(OSPGCommonResponseBlock)block loadMore:(BOOL)loadMore;
-
+- (void)getDiscoverMovieType:(OSPGMovieDiscoverType)type loadMore:(BOOL)loadMore block:(OSPGCommonResponseBlock)block;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -6,7 +6,8 @@
 //
 
 #import "OSPGDiscoverManager.h"
-#import "OSPGDiscoverResponse.h"
+#import "OSPGMovieLatestResponse.h"
+#import "OSPGMovieDiscoverResponse.h"
 
 @interface OSPGDiscoverManager ()
 
@@ -50,8 +51,23 @@ static OSPGDiscoverManager *_manager = nil;
     OSPGDiscoverRequest *request = [[OSPGDiscoverRequest alloc] init];
     request.sortBy = @"popularity.desc";
     request.page = [NSString stringWithFormat:@"%ld", self.page];
-    [request startRequestWithRspClass:[OSPGDiscoverResponse class]
+    [request startRequestWithRspClass:[OSPGMovieDiscoverResponse class]
                         completeBlock:block];
+}
+
+- (void)getDiscoverMovieType:(OSPGMovieDiscoverType)type loadMore:(BOOL)loadMore block:(OSPGCommonResponseBlock)block
+{
+    self.page = loadMore ? ++self.page : 1;
+    OSPGMovieDiscoverRequest *request = [[OSPGMovieDiscoverRequest alloc] init];
+    request.type = type;
+    Class class;
+    if (type != OSPGMovieDiscoverType_Latest) {
+        class = [OSPGMovieDiscoverResponse class];
+        request.page = [NSString stringWithFormat:@"%ld", self.page];
+    } else {
+        class = [OSPGMovieLatestResponse class];
+    }
+    [request startRequestWithRspClass:class completeBlock:block];
 }
 
 @end

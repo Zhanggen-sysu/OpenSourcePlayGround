@@ -1,19 +1,21 @@
 //
-//  OSPGDiscoverResponse.h
+//  OSPGMovieDiscoverResponse.h
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/9.
 //
 #import "OSPGBaseModel.h"
 
-@class OSPGDiscoverResult;
+@class OSPGMovieResult;
+@class OSPGDates;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface OSPGDiscoverResponse : OSPGBaseModel
+@interface OSPGMovieDiscoverResponse : OSPGBaseModel
 
 @property (nonatomic, assign) NSInteger page;
-@property (nonatomic, copy)   NSArray<OSPGDiscoverResult *> *results;
+@property (nonatomic, copy)   NSArray<OSPGMovieResult *> *results;
+@property (nonatomic, strong) OSPGDates *dates;
 @property (nonatomic, assign) NSInteger totalResults;
 @property (nonatomic, assign) NSInteger totalPages;
 

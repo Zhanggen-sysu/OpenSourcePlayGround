@@ -67,6 +67,11 @@ static CGFloat kItemCount = 1.5;
     return self.model.backdrops.count > 10 ? 10 : self.model.backdrops.count;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 - (UILabel *)titleLabel
 {
     if (!_titleLabel) {

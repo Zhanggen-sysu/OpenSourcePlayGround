@@ -17,7 +17,7 @@
 #import "OSPGCrewCastResponse.h"
 #import "OSPGImageResponse.h"
 #import "OSPGReviewResponse.h"
-#import "OSPGDiscoverResponse.h"
+#import "OSPGMovieDiscoverResponse.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 #import "YPNavigationController+Configure.h"
 
@@ -41,7 +41,7 @@ static NSInteger kPosterHeight = 192.f;
 @property (nonatomic, strong) OSPGCrewCastResponse *crewcastModel;
 @property (nonatomic, strong) OSPGImageResponse *imagesModel;
 @property (nonatomic, strong) OSPGReviewResponse *reviewModel;
-@property (nonatomic, strong) OSPGDiscoverResponse *similarModel;
+@property (nonatomic, strong) OSPGMovieDiscoverResponse *similarModel;
 
 @end
 
@@ -240,8 +240,10 @@ static NSInteger kPosterHeight = 192.f;
 - (void)loadData
 {
     [OSPGCommonHelper showLoadingInView:self.view animated:YES];
+    WeakSelf(self);
     [[OSPGMovieDetailManager sharedManager] getMovieDetailWithId:self.movieId
                                                  completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        StrongSelfReturnNil(self);
         [OSPGCommonHelper hideLoadingInView:self.view animated:YES];
         if (isSuccess) {
             self.detailModel = (OSPGMovieDetailResponse *)rsp;
@@ -252,7 +254,7 @@ static NSInteger kPosterHeight = 192.f;
     }];
     
     [[OSPGMovieDetailManager sharedManager] getCastCrewWithId:self.movieId completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
-        [OSPGCommonHelper hideLoadingInView:self.view animated:YES];
+        StrongSelfReturnNil(self);
         if (isSuccess) {
             self.crewcastModel = (OSPGCrewCastResponse *)rsp;
             [self.crewcastView updateWithModel:self.crewcastModel];
@@ -262,6 +264,7 @@ static NSInteger kPosterHeight = 192.f;
     }];
     
     [[OSPGMovieDetailManager sharedManager] getImagesWithId:self.movieId completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        StrongSelfReturnNil(self);
         if (isSuccess) {
             self.imagesModel = (OSPGImageResponse *)rsp;
             [self.photoView updateWithModel:self.imagesModel];
@@ -271,6 +274,7 @@ static NSInteger kPosterHeight = 192.f;
     }];
     
     [[OSPGMovieDetailManager sharedManager] getReviewsWithId:self.movieId loadMore:NO completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        StrongSelfReturnNil(self);
         if (isSuccess) {
             self.reviewModel = (OSPGReviewResponse *)rsp;
             if (self.reviewModel.results.count <= 0) {
@@ -298,8 +302,9 @@ static NSInteger kPosterHeight = 192.f;
     }];
     
     [[OSPGMovieDetailManager sharedManager] getSimilarWithId:self.movieId loadMore:NO completionBlock:^(BOOL isSuccess, id  _Nullable rsp, NSString * _Nullable errorMessage) {
+        StrongSelfReturnNil(self);
         if (isSuccess) {
-            self.similarModel = (OSPGDiscoverResponse *)rsp;
+            self.similarModel = (OSPGMovieDiscoverResponse *)rsp;
             [self.similarView updateWithModel:self.similarModel];
         } else {
             [OSPGCommonHelper showMessage:errorMessage inView:self.view duration:1];
