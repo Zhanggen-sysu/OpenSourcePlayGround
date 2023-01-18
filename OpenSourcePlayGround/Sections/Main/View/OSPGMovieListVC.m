@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray<OSPGMovieResult *> *data;
 @property (nonatomic, assign) OSPGMovieDiscoverType type;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
