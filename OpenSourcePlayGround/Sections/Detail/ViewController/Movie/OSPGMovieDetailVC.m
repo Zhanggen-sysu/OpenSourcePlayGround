@@ -205,6 +205,7 @@ static NSInteger kPosterHeight = 192.f;
     }
 }
 
+#pragma mark - YPNavigationBarConfigureStyle
 - (YPNavigationBarConfigurations)yp_navigtionBarConfiguration {
     YPNavigationBarConfigurations configurations = YPNavigationBarShow;
     if (@available(iOS 13.0, *)) {

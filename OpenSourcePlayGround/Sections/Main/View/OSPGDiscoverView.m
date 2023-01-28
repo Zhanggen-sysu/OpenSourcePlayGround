@@ -11,7 +11,7 @@
 #import "OSPGMovieDiscoverResponse.h"
 
 static NSInteger kItemCount = 3;
-@interface OSPGDiscoverView () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface OSPGDiscoverView () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) OSPGMovieDiscoverResponse *model;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -25,7 +25,8 @@ static NSInteger kItemCount = 3;
 - (void)setupSubviews
 {
     self.backgroundColor = [UIColor whiteColor];
-    UIGestureRecognizer *ges = [[UIGestureRecognizer alloc] initWithTarget:self action:@selector(didTapShowMore)];
+    UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapShowMore)];
+    ges.delegate = self;
     [self addGestureRecognizer:ges];
     [self addSubview:self.titleLabel];
     [self addSubview:self.collectionView];
@@ -131,6 +132,14 @@ static NSInteger kItemCount = 3;
 - (void)didTapShowMore
 {
     !self.didTapShowMoreBlock ?: self.didTapShowMoreBlock();
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    CGPoint point = [touch locationInView:self];
+    if (CGRectContainsPoint(self.collectionView.frame, point)) {
+        return NO;
+    }
+    return YES;
 }
 
 @end

@@ -19,6 +19,7 @@
 #import "OSPGMovieDetailVC.h"
 #import "OSPGMovieResult.h"
 #import "CYLTabBarController.h"
+#import "OSPGMovieListVC.h"
 #import <YPNavigationBarTransition/YPNavigationBarTransition.h>
 
 @interface OSPGMainVC () <YPNavigationBarConfigureStyle>
@@ -203,6 +204,10 @@
             StrongSelfReturnNil(self);
             [self showMovieDetail:movieId];
         };
+        _playingView.didTapShowMoreBlock = ^{
+            StrongSelfReturnNil(self);
+            [self showMovieListWithTitle:@"Now Playing" type:OSPGMovieDiscoverType_Playing];
+        };
     }
     return _playingView;
 }
@@ -216,6 +221,10 @@
         _popularView.didTapMovieBlock = ^(NSInteger movieId) {
             StrongSelfReturnNil(self);
             [self showMovieDetail:movieId];
+        };
+        _popularView.didTapShowMoreBlock = ^{
+            StrongSelfReturnNil(self);
+            [self showMovieListWithTitle:@"Popular" type:OSPGMovieDiscoverType_Popular];
         };
     }
     return _popularView;
@@ -231,6 +240,10 @@
             StrongSelfReturnNil(self);
             [self showMovieDetail:movieId];
         };
+        _topRateView.didTapShowMoreBlock = ^{
+            StrongSelfReturnNil(self);
+            [self showMovieListWithTitle:@"Top Rate" type:OSPGMovieDiscoverType_TopRate];
+        };
     }
     return _topRateView;
 }
@@ -244,6 +257,10 @@
         _upcomingView.didTapMovieBlock = ^(NSInteger movieId) {
             StrongSelfReturnNil(self);
             [self showMovieDetail:movieId];
+        };
+        _upcomingView.didTapShowMoreBlock = ^{
+            StrongSelfReturnNil(self);
+            [self showMovieListWithTitle:@"Upcoming" type:OSPGMovieDiscoverType_Upcoming];
         };
     }
     return _upcomingView;
@@ -274,6 +291,13 @@
     OSPGMovieDetailVC *vc = [[OSPGMovieDetailVC alloc] init];
     vc.movieId = movieId;
     // tips: 下一页的返回按钮需要在上一页设置才有效
+    self.navigationItem.backButtonTitle = @"";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)showMovieListWithTitle:(NSString *)title type:(OSPGMovieDiscoverType)type
+{
+    OSPGMovieListVC *vc = [[OSPGMovieListVC alloc] initWithTitle:title type:type];
     self.navigationItem.backButtonTitle = @"";
     [self.navigationController pushViewController:vc animated:YES];
 }

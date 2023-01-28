@@ -6,8 +6,11 @@
 //
 
 #import "OSPGMovieListCell.h"
+#import "OSPGMovieResult.h"
 #import "Masonry.h"
 #import "Macros.h"
+#import "OSPGCommonHelper.h"
+#import "UIImageView+WebCache.h"
 
 @interface OSPGMovieListCell ()
 
@@ -24,12 +27,14 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self setupSubviews];
         [self defineLayout];
     }
     return self;
 }
 
+#pragma mark - UI
 - (void)setupSubviews
 {
     [self.contentView addSubview:self.backView];
@@ -48,10 +53,10 @@
         make.leading.equalTo(self.backView).offset(15.f);
         make.top.equalTo(self.backView).offset(10.f);
         make.size.mas_equalTo(CGSizeMake(SCREEN_WIDTH / 3, SCREEN_WIDTH / 2));
-        make.bottom.equalTo(self.backView).offset(-10.f);
+        make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
     }];
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self.posterImg.mas_right).offset(15.f);
+        make.leading.equalTo(self.posterImg.mas_trailing).offset(15.f);
         make.top.equalTo(self.backView).offset(10.f);
         make.trailing.equalTo(self.backView).offset(-15.f);
     }];
@@ -62,8 +67,66 @@
     [self.overviewLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.subLabel.mas_bottom).offset(10.f);
         make.leading.trailing.equalTo(self.titleLabel);
-        make.bottom.equalTo(self.posterImg);
+        make.bottom.lessThanOrEqualTo(self.backView).offset(-10.f);
     }];
+}
+
+- (UIView *)backView
+{
+    if (!_backView) {
+        _backView = [[UIView alloc] init];
+    }
+    return _backView;
+}
+
+- (UIImageView *)posterImg
+{
+    if (!_posterImg) {
+        _posterImg = [[UIImageView alloc] init];
+    }
+    return _posterImg;
+}
+
+- (UILabel *)titleLabel
+{
+    if (!_titleLabel) {
+        _titleLabel = [[UILabel alloc] init];
+        _titleLabel.font = kBoldFont(16.f);
+        _titleLabel.numberOfLines = 2;
+    }
+    return _titleLabel;
+}
+
+- (UILabel *)subLabel
+{
+    if (!_subLabel) {
+        _subLabel = [[UILabel alloc] init];
+        _subLabel.font = kFont(14.f);
+    }
+    return _subLabel;
+}
+
+- (UILabel *)overviewLabel
+{
+    if (!_overviewLabel) {
+        _overviewLabel = [[UILabel alloc] init];
+        _overviewLabel.font = kFont(12.f);
+        _overviewLabel.textColor = RGBColor(128, 128, 128);
+        _overviewLabel.numberOfLines = 0;
+    }
+    return _overviewLabel;
+}
+
+#pragma mark - Data
+- (void)updateWithModel:(OSPGMovieResult *)result
+{
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:kGetImage(@"posterDefault")];
+    self.titleLabel.text = result.title;
+    NSString *releaseDate = [[OSPGCommonHelper sharedManager] dateFormateConvertString:result.releaseDate
+                                                                           fromFormate:OSPGDateFormate_yyyyMMdd
+                                                                             toFormate:OSPGDateFormate_MMMdyyyy];
+    self.subLabel.text = [NSString stringWithFormat:@"%@ | %@", releaseDate, result.originalLanguage];
+    self.overviewLabel.text = result.overview;
 }
 
 @end

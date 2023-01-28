@@ -6,10 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class OSPGMovieResult;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface OSPGMovieListCell : UITableViewCell
+
+- (void)updateWithModel:(OSPGMovieResult *)result;
 
 @end
 
