@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface OSPGSpokenLanguage : OSPGBaseModel
 
+@property (nonatomic, copy) NSString *englishName;
 @property (nonatomic, copy) NSString *iso639_1;
 @property (nonatomic, copy) NSString *name;
 

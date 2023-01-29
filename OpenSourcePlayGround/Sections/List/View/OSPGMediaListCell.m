@@ -1,18 +1,19 @@
 //
-//  OSPGMovieListCell.m
+//  OSPGMediaListCell.m
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/18.
 //
 
-#import "OSPGMovieListCell.h"
+#import "OSPGMediaListCell.h"
 #import "OSPGMovieResult.h"
+#import "OSPGTVResult.h"
 #import "Masonry.h"
 #import "Macros.h"
 #import "OSPGCommonHelper.h"
 #import "UIImageView+WebCache.h"
 
-@interface OSPGMovieListCell ()
+@interface OSPGMediaListCell ()
 
 @property (nonatomic, strong) UIImageView *posterImg;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -22,7 +23,7 @@
 
 @end
 
-@implementation OSPGMovieListCell
+@implementation OSPGMediaListCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -123,6 +124,17 @@
     [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:kGetImage(@"posterDefault")];
     self.titleLabel.text = result.title;
     NSString *releaseDate = [[OSPGCommonHelper sharedManager] dateFormateConvertString:result.releaseDate
+                                                                           fromFormate:OSPGDateFormate_yyyyMMdd
+                                                                             toFormate:OSPGDateFormate_MMMdyyyy];
+    self.subLabel.text = [NSString stringWithFormat:@"%@ | %@", releaseDate, result.originalLanguage];
+    self.overviewLabel.text = result.overview;
+}
+
+- (void)updateWithTVModel:(OSPGTVResult *)result
+{
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:kGetImage(@"posterDefault")];
+    self.titleLabel.text = result.name;
+    NSString *releaseDate = [[OSPGCommonHelper sharedManager] dateFormateConvertString:result.firstAirDate
                                                                            fromFormate:OSPGDateFormate_yyyyMMdd
                                                                              toFormate:OSPGDateFormate_MMMdyyyy];
     self.subLabel.text = [NSString stringWithFormat:@"%@ | %@", releaseDate, result.originalLanguage];

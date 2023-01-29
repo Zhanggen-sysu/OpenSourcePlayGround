@@ -1,15 +1,16 @@
 //
-//  OSPGMovieLatestView.m
+//  OSPGLatestView.m
 //  OpenSourcePlayGround
 //
 //  Created by GenZhang on 2023/1/18.
 //
 
-#import "OSPGMovieLatestView.h"
+#import "OSPGLatestView.h"
 #import "OSPGMovieLatestResponse.h"
+#import "OSPGTVLatestResponse.h"
 #import "UIImageView+WebCache.h"
 
-@interface OSPGMovieLatestView ()
+@interface OSPGLatestView ()
 
 @property (nonatomic, strong) UIImageView *imageView;
 @property (nonatomic, strong) UILabel *taglineLabel;
@@ -17,10 +18,11 @@
 @property (nonatomic, strong) UIView *gradientView;
 
 @property (nonatomic, strong) OSPGMovieLatestResponse *model;
+@property (nonatomic, strong) OSPGTVLatestResponse *tvModel;
 
 @end
 
-@implementation OSPGMovieLatestView
+@implementation OSPGLatestView
 
 - (void)setupSubviews
 {
@@ -50,7 +52,7 @@
     }];
     [self.gradientView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.bottom.equalTo(self.imageView);
-        make.height.mas_equalTo(50.f);
+        make.height.mas_equalTo(60.f);
     }];
 }
 
@@ -90,7 +92,7 @@
     if (!_gradientView) {
         _gradientView = [[UIView alloc] init];
         CAGradientLayer *layer = [[CAGradientLayer alloc] init];
-        layer.frame = CGRectMake(0, 0, SCREEN_WIDTH - 30.f, 50.f);
+        layer.frame = CGRectMake(0, 0, SCREEN_WIDTH - 30.f, 60.f);
         layer.startPoint = CGPointMake(0.5, 0);
         layer.endPoint = CGPointMake(0.5, 1);
         layer.colors = @[(__bridge id)RGBAColor(0, 0, 0, 0).CGColor, (__bridge id)RGBAColor(0, 0, 0, 0.5).CGColor];
@@ -102,13 +104,24 @@
 #pragma mark - data
 - (void)updateWithModel:(OSPGMovieLatestResponse *)model
 {
-    if (model.identifier != model.identifier) {
+    if (model.identifier == self.model.identifier) {
         return;
     }
     self.model = model;
     [self.imageView sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:model.backdropPath size:OSPGBackdropSize_w780] placeholderImage:kGetImage(@"backdropDefault")];
     self.taglineLabel.text = model.tagline;
     self.nameLabel.text = model.title;
+}
+
+- (void)updateWithTVModel:(OSPGTVLatestResponse *)model
+{
+    if (model.identifier == self.tvModel.identifier) {
+        return;
+    }
+    self.tvModel = model;
+    [self.imageView sd_setImageWithURL:[OSPGCommonHelper getBackdropUrl:model.backdropPath size:OSPGBackdropSize_w780] placeholderImage:kGetImage(@"backdropDefault")];
+    self.taglineLabel.text = model.tagline;
+    self.nameLabel.text = model.name;
 }
 
 #pragma mark - action

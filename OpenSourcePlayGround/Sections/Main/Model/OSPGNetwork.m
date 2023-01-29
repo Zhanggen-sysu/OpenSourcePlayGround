@@ -1,22 +1,24 @@
 //
-//  OSPGSpokenLanguage.m
+//  OSPGNetwork.m
 //  OpenSourcePlayGround
 //
-//  Created by GenZhang on 2023/1/11.
+//  Created by GenZhang on 2023/1/29.
 //
 
-#import "OSPGSpokenLanguage.h"
+#import "OSPGNetwork.h"
 
-@implementation OSPGSpokenLanguage
+@implementation OSPGNetwork
 
 + (NSDictionary<NSString *, NSString *> *)properties
 {
     static NSDictionary<NSString *, NSString *> *properties;
     return properties = properties ? properties : @{
-        @"english_name": @"englishName",
-        @"iso_639_1": @"iso639_1",
+        @"id": @"identifier",
         @"name": @"name",
+        @"logo_path": @"logoPath",
+        @"origin_country": @"originCountry",
     };
 }
+
 
 @end

@@ -7,6 +7,7 @@
 
 #import "OSPGDiscoverCell.h"
 #import "OSPGMovieResult.h"
+#import "OSPGTVResult.h"
 #import "Macros.h"
 #import "OSPGCommonHelper.h"
 #import "Masonry.h"
@@ -16,6 +17,7 @@
 @interface OSPGDiscoverCell ()
 
 @property (nonatomic, strong) OSPGMovieResult *model;
+@property (nonatomic, strong) OSPGTVResult *tvModel;
 @property (nonatomic, strong) UIImageView *posterImg;
 @property (nonatomic, strong) UIButton *rateLabel;
 
@@ -81,6 +83,16 @@
         return;
     }
     self.model = result;
+    [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
+    [self.rateLabel setTitle:[NSString stringWithFormat:@"%.1f", result.voteAverage] forState:UIControlStateNormal];
+}
+
+- (void)updateWithTVModel:(OSPGTVResult *)result
+{
+    if (result.identifier == self.tvModel.identifier) {
+        return;
+    }
+    self.tvModel = result;
     [self.posterImg sd_setImageWithURL:[OSPGCommonHelper getPosterUrl:result.posterPath size:OSPGPosterSize_w342] placeholderImage:[UIImage imageNamed:@"posterDefault"]];
     [self.rateLabel setTitle:[NSString stringWithFormat:@"%.1f", result.voteAverage] forState:UIControlStateNormal];
 }

@@ -8,12 +8,17 @@
 #import "OSPGDiscoverView.h"
 #import "OSPGDiscoverCell.h"
 #import "OSPGMovieResult.h"
+#import "OSPGTVResult.h"
 #import "OSPGMovieDiscoverResponse.h"
+#import "OSPGTVDiscoverResponse.h"
 
 static NSInteger kItemCount = 3;
 @interface OSPGDiscoverView () <UICollectionViewDelegate, UICollectionViewDataSource, UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) OSPGMovieDiscoverResponse *model;
+@property (nonatomic, strong) OSPGTVDiscoverResponse *tvModel;
+@property (nonatomic, assign) BOOL isMovie;
+
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) UIImageView *rightIcon;
@@ -57,21 +62,32 @@ static NSInteger kItemCount = 3;
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    OSPGMovieResult *result = self.model.results[indexPath.row];
-    !self.didTapMovieBlock ?: self.didTapMovieBlock(result.identifier);
+    if (self.isMovie) {
+        OSPGMovieResult *result = self.model.results[indexPath.row];
+        !self.didTapItemBlock ?: self.didTapItemBlock(result.identifier);
+    } else {
+        OSPGTVResult *result = self.tvModel.results[indexPath.row];
+        !self.didTapItemBlock ?: self.didTapItemBlock(result.identifier);
+    }
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     OSPGDiscoverCell *cell = (OSPGDiscoverCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([OSPGDiscoverCell class]) forIndexPath:indexPath];
-    OSPGMovieResult *result = self.model.results[indexPath.row];
-    [cell updateWithModel:result];
+    if (self.isMovie) {
+        OSPGMovieResult *result = self.model.results[indexPath.row];
+        [cell updateWithModel:result];
+    } else {
+        OSPGTVResult *result = self.tvModel.results[indexPath.row];
+        [cell updateWithTVModel:result];
+    }
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.model.results.count > 10 ? 10 : self.model.results.count;
+    NSInteger cnt = self.isMovie ? self.model.results.count : self.tvModel.results.count;
+    return cnt > 10 ? 10 : cnt;
 }
 
 - (UILabel *)titleLabel
@@ -113,6 +129,14 @@ static NSInteger kItemCount = 3;
 - (void)updateWithModel:(OSPGMovieDiscoverResponse *)model
 {
     self.model = model;
+    self.isMovie = YES;
+    [self.collectionView reloadData];
+}
+
+- (void)updateWithTVModel:(OSPGTVDiscoverResponse *)model
+{
+    self.tvModel = model;
+    self.isMovie = NO;
     [self.collectionView reloadData];
 }
 

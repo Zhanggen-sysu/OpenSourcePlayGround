@@ -8,10 +8,13 @@
 #import "OSPGDiscoverManager.h"
 #import "OSPGMovieLatestResponse.h"
 #import "OSPGMovieDiscoverResponse.h"
+#import "OSPGTVLatestResponse.h"
+#import "OSPGTVDiscoverResponse.h"
 
 @interface OSPGDiscoverManager ()
 
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) NSInteger tvPage;
 
 @end
 
@@ -66,6 +69,21 @@ static OSPGDiscoverManager *_manager = nil;
         request.page = [NSString stringWithFormat:@"%ld", self.page];
     } else {
         class = [OSPGMovieLatestResponse class];
+    }
+    [request startRequestWithRspClass:class completeBlock:block];
+}
+
+- (void)getDiscoverTVType:(OSPGTVDiscoverType)type loadMore:(BOOL)loadMore block:(OSPGCommonResponseBlock)block
+{
+    self.tvPage = loadMore ? ++self.tvPage : 1;
+    OSPGTVDiscoverRequest *request = [[OSPGTVDiscoverRequest alloc] init];
+    request.type = type;
+    Class class;
+    if (type != OSPGTVDiscoverType_Latest) {
+        class = [OSPGTVDiscoverResponse class];
+        request.page = [NSString stringWithFormat:@"%ld", self.tvPage];
+    } else {
+        class = [OSPGTVLatestResponse class];
     }
     [request startRequestWithRspClass:class completeBlock:block];
 }
