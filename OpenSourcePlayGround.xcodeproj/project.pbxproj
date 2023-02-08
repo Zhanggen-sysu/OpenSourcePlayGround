@@ -36,6 +36,9 @@
 		3DD14BE4298656F5009F20E9 /* OSPGMediaListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14BE3298656F5009F20E9 /* OSPGMediaListVC.m */; };
 		3DD14BE729865B29009F20E9 /* OSPGTVDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14BE629865B29009F20E9 /* OSPGTVDetailRequest.m */; };
 		3DD14BED29866485009F20E9 /* OSPGTVDetailManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14BEC29866485009F20E9 /* OSPGTVDetailManager.m */; };
+		3DD14BF029867AFC009F20E9 /* OSPGTVDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14BEF29867AFC009F20E9 /* OSPGTVDetailVC.m */; };
+		3DD14BF329867C2A009F20E9 /* OSPGTVDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14BF229867C2A009F20E9 /* OSPGTVDetailView.m */; };
+		3DD14C30298CA08D009F20E9 /* OSPGSignatureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD14C2F298CA08D009F20E9 /* OSPGSignatureView.m */; };
 		3DD52924296BB7C100414684 /* OSPGDiscoverManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */; };
 		3DD5292A296BEF6500414684 /* OSPGBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD52929296BEF6500414684 /* OSPGBaseRequest.m */; };
 		3DD52930296BFE8800414684 /* OSPGBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD5292F296BFE8800414684 /* OSPGBaseModel.m */; };
@@ -145,6 +148,12 @@
 		3DD14BE629865B29009F20E9 /* OSPGTVDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGTVDetailRequest.m; sourceTree = "<group>"; };
 		3DD14BEB29866485009F20E9 /* OSPGTVDetailManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGTVDetailManager.h; sourceTree = "<group>"; };
 		3DD14BEC29866485009F20E9 /* OSPGTVDetailManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGTVDetailManager.m; sourceTree = "<group>"; };
+		3DD14BEE29867AFC009F20E9 /* OSPGTVDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGTVDetailVC.h; sourceTree = "<group>"; };
+		3DD14BEF29867AFC009F20E9 /* OSPGTVDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGTVDetailVC.m; sourceTree = "<group>"; };
+		3DD14BF129867C2A009F20E9 /* OSPGTVDetailView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGTVDetailView.h; sourceTree = "<group>"; };
+		3DD14BF229867C2A009F20E9 /* OSPGTVDetailView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGTVDetailView.m; sourceTree = "<group>"; };
+		3DD14C2E298CA08D009F20E9 /* OSPGSignatureView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGSignatureView.h; sourceTree = "<group>"; };
+		3DD14C2F298CA08D009F20E9 /* OSPGSignatureView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGSignatureView.m; sourceTree = "<group>"; };
 		3DD476242949BAC3002B00F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/genzhang/Documents/Learn/OpenSourcePlayGround/OpenSourcePlayGround/Info.plist; sourceTree = "<absolute>"; };
 		3DD52922296BB7C100414684 /* OSPGDiscoverManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPGDiscoverManager.h; sourceTree = "<group>"; };
 		3DD52923296BB7C100414684 /* OSPGDiscoverManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPGDiscoverManager.m; sourceTree = "<group>"; };
@@ -369,6 +378,8 @@
 		3DC44E8F294AF9B600439323 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3DD14C2E298CA08D009F20E9 /* OSPGSignatureView.h */,
+				3DD14C2F298CA08D009F20E9 /* OSPGSignatureView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -739,6 +750,8 @@
 				3DDD26B329763B090029216C /* OSPGSimilarMovieCell.m */,
 				3DDD26AC2975401B0029216C /* OSPGSimilarMovieView.h */,
 				3DDD26AD2975401B0029216C /* OSPGSimilarMovieView.m */,
+				3DD14BF129867C2A009F20E9 /* OSPGTVDetailView.h */,
+				3DD14BF229867C2A009F20E9 /* OSPGTVDetailView.m */,
 			);
 			path = Movie;
 			sourceTree = "<group>";
@@ -762,6 +775,8 @@
 		3DD5299C29715C7D00414684 /* TV */ = {
 			isa = PBXGroup;
 			children = (
+				3DD14BEE29867AFC009F20E9 /* OSPGTVDetailVC.h */,
+				3DD14BEF29867AFC009F20E9 /* OSPGTVDetailVC.m */,
 			);
 			path = TV;
 			sourceTree = "<group>";
@@ -985,6 +1000,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DD14C30298CA08D009F20E9 /* OSPGSignatureView.m in Sources */,
 				3DD14BB629860D9A009F20E9 /* OSPGCreditDetailRequest.m in Sources */,
 				3DC44E89294ACD2700439323 /* OSPGMessageViewController.m in Sources */,
 				3DD5297E297012CC00414684 /* OSPGCrew.m in Sources */,
@@ -999,6 +1015,7 @@
 				3DD5295D296E685300414684 /* OSPGMovieDetailManager.m in Sources */,
 				3DD14BE1298656DC009F20E9 /* OSPGMediaListCell.m in Sources */,
 				3DD14BD229864777009F20E9 /* OSPGLastEpisodeToAir.m in Sources */,
+				3DD14BF329867C2A009F20E9 /* OSPGTVDetailView.m in Sources */,
 				3DD529AB297167A800414684 /* OSPGReviewAuthorDetails.m in Sources */,
 				3DD14BC229861199009F20E9 /* OSPGPerson.m in Sources */,
 				3DD52951296E633E00414684 /* OSPGGenre.m in Sources */,
@@ -1043,6 +1060,7 @@
 				3DD5296E296FFB4F00414684 /* OSPGBaseView.m in Sources */,
 				3DC44EA3294B177B00439323 /* OSPGTCMViewController.m in Sources */,
 				3DD5298529713E5100414684 /* OSPGPhotoCell.m in Sources */,
+				3DD14BF029867AFC009F20E9 /* OSPGTVDetailVC.m in Sources */,
 				3DD14BBF2986116E009F20E9 /* OSPGSeason.m in Sources */,
 				3DD14BBC29861138009F20E9 /* OSPGMedia.m in Sources */,
 				3DDD26BB2976903C0029216C /* OSPGDiscoverView.m in Sources */,
